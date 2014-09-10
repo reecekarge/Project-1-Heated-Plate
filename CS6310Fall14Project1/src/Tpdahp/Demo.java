@@ -3,7 +3,6 @@ package Tpdahp;
 public class Demo {
 
 	public Demo() {
-		// TODO Auto-generated constructor stub
 	}
 	public static void main(String[] args) {
 		if(args.length==5){
@@ -15,16 +14,11 @@ public class Demo {
 			simulator.simulate();
 			simulator.printPlate();
 		}else{
+			//Print out help
 			System.out.println("Invalid number of arguements.");
 			System.out.println("Proper usage: java Tpdahp.Demo -d # -l # -r # -t # -b #");
 		}
-//		DiffusionSimulator simulator = new DiffusionSimulator(5,
-//				5,
-//				3,
-//				2,
-//				1);
-//		simulator.simulate();
-//		simulator.printPlate();
+
 	
 	}
 }
