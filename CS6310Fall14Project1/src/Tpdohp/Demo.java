@@ -1,8 +1,8 @@
-package edu.gatech.Tpdahp;
+package Tpdohp;
 
-public class DiffusionSimulator {
+public class Demo {
 
-	public DiffusionSimulator() {
+	public Demo() {
 		// TODO Auto-generated constructor stub
 	}
 
