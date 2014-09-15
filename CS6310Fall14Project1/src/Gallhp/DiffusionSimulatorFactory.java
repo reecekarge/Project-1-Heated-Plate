@@ -5,7 +5,7 @@ public class DiffusionSimulatorFactory {
 	public DiffusionSimulatorFactory() {
 	}
 	
-	//Returns a specific immplementation of the interface DiffusionSimulator
+	//Returns a specific immplementation of the abstract class DiffusionSimulator
 	public static DiffusionSimulator createSimulator(String type){
 		if("Tpdahp".equalsIgnoreCase(type)){
 			return null;
