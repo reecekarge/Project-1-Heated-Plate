@@ -1,16 +1,16 @@
-package Tpdahp;
+package Twfahp;
 
 public class DiffusionSimulator {
 
-    private double[][] oldPlate;
-    private double[][] newPlate;
+    private Float[][] oldPlate;
+    private Float[][] newPlate;
     private int dimension;
     private int counter;
 
     public DiffusionSimulator(int dim, int top, int bot, int left, int right) {
         this.dimension = dim + 2;
-        oldPlate = new double[dimension][dimension];
-        newPlate = new double[dimension][dimension];
+        oldPlate = new Float[dimension][dimension];
+        newPlate = new Float[dimension][dimension];
 
         // Initialize the temperatures of the edge values and the plate itself
         initialize(oldPlate, top, bot, left, right);
@@ -27,8 +27,8 @@ public class DiffusionSimulator {
             counter++;
             for (int i = 1; i <= dimension - 2; i++) {
                 for (int j = 1; j <= dimension - 2; j++) {
-                    newPlate[i][j] = (oldPlate[i + 1][j] + oldPlate[i - 1][j]
-                            + oldPlate[i][j + 1] + oldPlate[i][j - 1]) / 4.0;
+                    newPlate[i][j] = new Float (((oldPlate[i + 1][j] + oldPlate[i - 1][j]
+                            + oldPlate[i][j + 1] + oldPlate[i][j - 1]) / 4.0));
                 }
             }
             // Swap the plates and continue
@@ -37,37 +37,37 @@ public class DiffusionSimulator {
     }
 
     //Initializes starting temperatures on the edges of the plate
-    private void initialize(double[][] plate, int top, int bot, int left, int right) {
+    private void initialize(Float[][] plate, int top, int bot, int left, int right) {
         //initialize the top temp
         for (int i = 0; i < dimension; i++) {
             if (i != 0 && i != dimension - 1) {
-                plate[0][i] = top;
+                plate[0][i] = Float.valueOf(top);
             }
         }
         //initialize the bottom
         for (int i = 0; i < dimension; i++) {
             if (i != 0 && i != dimension - 1) {
-                plate[dimension - 1][i] = bot;
+                plate[dimension - 1][i] = Float.valueOf(bot);
             }
         }
         //initialize the left
         for (int i = 0; i < dimension; i++) {
             if (i != 0 && i != dimension - 1) {
-                plate[i][0] = left;
+                plate[i][0] = Float.valueOf(left);
             }
         }
         //initialize right
         for (int i = 0; i < dimension; i++) {
             if (i != 0 && i != dimension - 1) {
-                plate[i][dimension - 1] = right;
+                plate[i][dimension - 1] = Float.valueOf(right);                
             }
         }
 
     }
 
     //Switches the old plate with the new plate
-    private void swap(double[][] oldPlate, double[][] newPlate) {
-        double[][] tempPlate = oldPlate;
+    private void swap(Float[][] oldPlate, Float[][] newPlate) {
+        Float[][] tempPlate = oldPlate;
         this.oldPlate = newPlate;
         this.newPlate = tempPlate;
     }
