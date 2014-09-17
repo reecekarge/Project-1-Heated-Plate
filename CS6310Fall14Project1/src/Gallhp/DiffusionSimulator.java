@@ -30,7 +30,7 @@ public abstract class  DiffusionSimulator extends JPanel{
 			
 			area.setBackground(Color.getHSBColor(.666f, 1f, 1f));
 			area.setVisible(true);
-	
+			area.setEditable(false);
 			grid.get(i).set(j,area);
 			add(area);
 			}
