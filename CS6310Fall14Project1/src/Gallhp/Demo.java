@@ -1,5 +1,7 @@
 package Gallhp;
 
+import javax.swing.SwingUtilities;
+
 public class Demo {
 
 	public Demo() {
@@ -7,7 +9,12 @@ public class Demo {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		  SwingUtilities.invokeLater(new Runnable() {
+		      public void run() {
+		  		DiffusionSimulatorGUI gui = new DiffusionSimulatorGUI();
+				gui.displayGui();
+		      }
+		    });
 
 	}
 
