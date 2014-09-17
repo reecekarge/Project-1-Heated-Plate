@@ -117,11 +117,11 @@ public class DiffusionSimulatorGUI extends JFrame{
             public void actionPerformed(ActionEvent e)
             {
             	if(plate==null){
-            		plate = new Tpdahp(Integer.valueOf(gridSize.getText()),
-            				Integer.valueOf(topTemp.getText()),
-            				Integer.valueOf(botTemp.getText()),
-            				Integer.valueOf(leftTemp.getText()),
-            				Integer.valueOf(rightTemp.getText())); 
+            		plate = DiffusionSimulatorFactory.createSimulator("Tpdahp",gridSize.getText(),
+            				topTemp.getText(),
+            				botTemp.getText(),
+            				leftTemp.getText(),
+            				rightTemp.getText()); 
             		rightPanel.add(plate);
             		runButton.setText("Run Simulation");
             		repaint();
