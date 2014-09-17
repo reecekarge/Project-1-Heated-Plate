@@ -74,17 +74,17 @@ public class DiffusionSimulator {
 
     //prints out the plate
     public void printPlate() {
-        for (int j = 0; j < dimension; j++) {
-            System.out.print("----");
+        for (int j = 1; j < dimension-1; j++) {
+            System.out.print("------");
         }
         System.out.println();
-        for (int i = 0; i < dimension; i++) {
-            for (int j = 0; j < dimension; j++) {
-                System.out.printf("%.1f|", oldPlate[i][j]);
+        for (int i = 1; i < dimension-1; i++) {
+            for (int j = 1; j < dimension-1; j++) {
+                System.out.printf("%.2f|", oldPlate[i][j]);
             }
             System.out.println();
-            for (int j = 0; j < dimension; j++) {
-                System.out.print("----");
+            for (int j = 1; j < dimension-1; j++) {
+                System.out.print("------");
             }
             System.out.println();
         }

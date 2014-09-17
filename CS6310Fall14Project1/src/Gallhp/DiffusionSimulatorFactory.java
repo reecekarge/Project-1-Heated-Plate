@@ -1,14 +1,20 @@
 package Gallhp;
 
+import Gallhp.Tpdahp;
+
 public class DiffusionSimulatorFactory {
 
 	public DiffusionSimulatorFactory() {
 	}
 	
 	//Returns a specific immplementation of the abstract class DiffusionSimulator
-	public static DiffusionSimulator createSimulator(String type){
+	public static DiffusionSimulator createSimulator(String type, String gridSize, String topTemp, String botTemp, String leftTemp, String rightTemp){
 		if("Tpdahp".equalsIgnoreCase(type)){
-			return null;
+			return  new Tpdahp(Integer.valueOf(gridSize),
+    				Integer.valueOf(topTemp),
+    				Integer.valueOf(botTemp),
+    				Integer.valueOf(leftTemp),
+    				Integer.valueOf(rightTemp)); 
 		}else if("Tpdohp".equalsIgnoreCase(type)){
 			return null;
 		}else if("Tpfahp".equalsIgnoreCase(type)){
