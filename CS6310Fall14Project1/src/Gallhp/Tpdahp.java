@@ -13,7 +13,7 @@ public class Tpdahp extends DiffusionSimulator {
 		// Initialize the temperatures of the edge values and the plate itself
 		initialize(oldPlate, top, bot, left, right);
 		initialize(newPlate, top, bot, left, right);
-
+   
 		counter = 0;
 	}
 
