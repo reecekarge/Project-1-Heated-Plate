@@ -16,8 +16,8 @@ public class Demo
         {
             public void run()
             {
-                DiffusionSimulatorGUI2 gui = new DiffusionSimulatorGUI2();
-                gui.setVisible(true);
+                DiffusionSimulatorGUI gui = new DiffusionSimulatorGUI();
+                gui.displayGui();
                 //gui.displayGui();
             }
         });

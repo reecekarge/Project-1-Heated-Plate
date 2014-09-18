@@ -12,7 +12,7 @@ public class DiffusionSimulatorFactory
     {
         if ("Tpdahp".equalsIgnoreCase(type))
         {
-            return null;
+            return new Tpdahp(Integer.valueOf(gridSize),Integer.valueOf(topTemp),Integer.valueOf(botTemp),Integer.valueOf(leftTemp),Integer.valueOf(rightTemp));
         } else if ("Tpdohp".equalsIgnoreCase(type))
         {
             return null;
