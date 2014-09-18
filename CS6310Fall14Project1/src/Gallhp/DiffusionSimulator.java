@@ -26,7 +26,7 @@ public abstract class  DiffusionSimulator extends JPanel{
 			for(int j=0; j<dimension; j++){
 			JTextArea area = new JTextArea();
 			area.setSize(squareSize, squareSize);
-			area.setBorder(BorderFactory.createLineBorder(Color.black));
+			area.setBorder(BorderFactory.createLineBorder(Color.black, 1));
 			
 			area.setBackground(Color.getHSBColor(.666f, 1f, 1f));
 			area.setVisible(true);
@@ -56,11 +56,8 @@ public abstract class  DiffusionSimulator extends JPanel{
 		}
 	}
 	abstract public void simulate();
-	abstract protected void initialize(double[][] plate,int top,int bot,int left,int right);
-	abstract protected void swap(double[][] oldPlate, double[][] newPlate);
 	abstract public void printPlate();
 	abstract protected boolean done();
-	abstract public double[][] next();
 	
 	
 }

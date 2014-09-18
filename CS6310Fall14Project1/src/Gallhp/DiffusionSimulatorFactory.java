@@ -1,6 +1,9 @@
 package Gallhp;
 
 import Gallhp.simulator.Tpdahp;
+import Gallhp.simulator.Tpdohp;
+import Gallhp.simulator.Tpfahp;
+import Gallhp.simulator.Twfahp;
 
 public class DiffusionSimulatorFactory
 {
@@ -17,13 +20,13 @@ public class DiffusionSimulatorFactory
             return new Tpdahp(Integer.valueOf(gridSize),Integer.valueOf(topTemp),Integer.valueOf(botTemp),Integer.valueOf(leftTemp),Integer.valueOf(rightTemp));
         } else if ("Tpdohp".equalsIgnoreCase(type))
         {
-            return null;
+            //return new Tpdohp(Integer.valueOf(gridSize),Integer.valueOf(topTemp),Integer.valueOf(botTemp),Integer.valueOf(leftTemp),Integer.valueOf(rightTemp));
         } else if ("Tpfahp".equalsIgnoreCase(type))
         {
-            return null;
+            return new Tpfahp(Integer.valueOf(gridSize),Integer.valueOf(topTemp),Integer.valueOf(botTemp),Integer.valueOf(leftTemp),Integer.valueOf(rightTemp));
         } else if ("Twfahp".equalsIgnoreCase(type))
         {
-            return null;
+            return new Twfahp(Integer.valueOf(gridSize),Integer.valueOf(topTemp),Integer.valueOf(botTemp),Integer.valueOf(leftTemp),Integer.valueOf(rightTemp));
         }
         return null;
     }

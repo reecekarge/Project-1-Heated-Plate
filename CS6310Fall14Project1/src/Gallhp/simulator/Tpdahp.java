@@ -43,19 +43,6 @@ public class Tpdahp extends DiffusionSimulator {
 			super.reloadGrid();
 		} while (!done());
 	}
-	public double[][] next(){
-		counter++;
-		for (int i = 1; i <= dimension - 2; i++) {
-			for (int j = 1; j <= dimension - 2; j++) {
-				updateGridCell(i, j, newPlate[i][j]);
-				newPlate[i][j] = (oldPlate[i + 1][j] + oldPlate[i - 1][j]
-						+ oldPlate[i][j + 1] + oldPlate[i][j - 1]) / 4.0;
-			}
-		}
-		// Swap the plates and continue
-		swap(oldPlate, newPlate);
-		return oldPlate;
-	}
 	// Initializes starting temperatures on the edges of the plate
 	protected void initialize(double[][] plate, int top, int bot, int left,
 			int right) {
