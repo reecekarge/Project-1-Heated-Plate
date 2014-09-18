@@ -243,6 +243,11 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
                 .addContainerGap())
         );
 
+        progressBar.setMaximum(4);
+        progressBar.setToolTipText("");
+        progressBar.setValue(0);
+        progressBar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -301,8 +306,6 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
         switch (programOption)
         {
             case "Tpdahp":
-                progressBar.setValue(0);
-                progressBar.setMaximum(4);
                 progressBar.setValue(1);
                 Tpdahp.DiffusionSimulator TpdahpSimulator = new Tpdahp.DiffusionSimulator(d, t, b, l, r);
                 progressBar.setValue(2);
@@ -314,8 +317,6 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
             case "Tpdohp":
                 break;
             case "Tpfahp":
-                progressBar.setValue(0);
-                progressBar.setMaximum(4);
                 progressBar.setValue(1);
                 Tpfahp.DiffusionSimulator TpfahpSimulator = new Tpfahp.DiffusionSimulator(d, t, b, l, r);
                 progressBar.setValue(2);
@@ -325,8 +326,6 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
                 progressBar.setValue(4);
                 break;
             case "Twfahp":
-                progressBar.setValue(0);
-                progressBar.setMaximum(4);
                 progressBar.setValue(1);
                 Twfahp.DiffusionSimulator TwfahpSimulator = new Twfahp.DiffusionSimulator(d, t, b, l, r);
                 progressBar.setValue(2);
@@ -334,8 +333,10 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
                 progressBar.setValue(3);
                 txtResults.setText(TwfahpSimulator.exportPlate().toString());
                 progressBar.setValue(4);
+
                 break;
         }
+        progressBar.setValue(0);
     }//GEN-LAST:event_btnRunActionPerformed
 
     /**
