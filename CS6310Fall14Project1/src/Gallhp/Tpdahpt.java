@@ -1,18 +1,18 @@
-package Tpfahp;
+package Gallhp;
 
-public class DiffusionSimulator
+public class Tpdahpt
 {
 
-    private float[][] oldPlate;
-    private float[][] newPlate;
+    private double[][] oldPlate;
+    private double[][] newPlate;
     private int dimension;
     private int counter;
 
-    public DiffusionSimulator(int dim, int top, int bot, int left, int right)
+    public Tpdahpt(int dim, int top, int bot, int left, int right)
     {
         this.dimension = dim + 2;
-        oldPlate = new float[dimension][dimension];
-        newPlate = new float[dimension][dimension];
+        oldPlate = new double[dimension][dimension];
+        newPlate = new double[dimension][dimension];
 
         // Initialize the temperatures of the edge values and the plate itself
         initialize(oldPlate, top, bot, left, right);
@@ -33,8 +33,8 @@ public class DiffusionSimulator
             {
                 for (int j = 1; j <= dimension - 2; j++)
                 {
-                    newPlate[i][j] = (float) ((oldPlate[i + 1][j] + oldPlate[i - 1][j]
-                            + oldPlate[i][j + 1] + oldPlate[i][j - 1]) / 4.0);
+                    newPlate[i][j] = (oldPlate[i + 1][j] + oldPlate[i - 1][j]
+                            + oldPlate[i][j + 1] + oldPlate[i][j - 1]) / 4.0;
                 }
             }
             // Swap the plates and continue
@@ -43,14 +43,14 @@ public class DiffusionSimulator
     }
 
     //Initializes starting temperatures on the edges of the plate
-    private void initialize(float[][] plate, int top, int bot, int left, int right)
+    private void initialize(double[][] plate, int top, int bot, int left, int right)
     {
         //initialize the top temp
         for (int i = 0; i < dimension; i++)
         {
             if (i != 0 && i != dimension - 1)
             {
-                plate[0][i] = (float) top;
+                plate[0][i] = top;
             }
         }
         //initialize the bottom
@@ -58,7 +58,7 @@ public class DiffusionSimulator
         {
             if (i != 0 && i != dimension - 1)
             {
-                plate[dimension - 1][i] = (float) bot;
+                plate[dimension - 1][i] = bot;
             }
         }
         //initialize the left
@@ -66,7 +66,7 @@ public class DiffusionSimulator
         {
             if (i != 0 && i != dimension - 1)
             {
-                plate[i][0] = (float) left;
+                plate[i][0] = left;
             }
         }
         //initialize right
@@ -74,16 +74,16 @@ public class DiffusionSimulator
         {
             if (i != 0 && i != dimension - 1)
             {
-                plate[i][dimension - 1] = (float) right;
+                plate[i][dimension - 1] = right;
             }
         }
 
     }
 
     //Switches the old plate with the new plate
-    private void swap(float[][] oldPlate, float[][] newPlate)
+    private void swap(double[][] oldPlate, double[][] newPlate)
     {
-        float[][] tempPlate = oldPlate;
+        double[][] tempPlate = oldPlate;
         this.oldPlate = newPlate;
         this.newPlate = tempPlate;
     }
@@ -115,6 +115,7 @@ public class DiffusionSimulator
     public StringBuffer exportPlate()
     {
         StringBuffer ret = new StringBuffer();
+
         for (int j = 1; j < dimension - 1; j++)
         {
             ret.append("------");
@@ -133,6 +134,7 @@ public class DiffusionSimulator
             }
             ret.append("\n");
         }
+
         return ret;
     }
 

@@ -36,18 +36,22 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
         program = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        d = new javax.swing.JTextField();
+        txtD = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         toptemp = new javax.swing.JLabel();
-        t = new javax.swing.JTextField();
-        b = new javax.swing.JTextField();
+        txtT = new javax.swing.JTextField();
+        txtB = new javax.swing.JTextField();
         toptemp1 = new javax.swing.JLabel();
-        r = new javax.swing.JTextField();
+        txtR = new javax.swing.JTextField();
         toptemp2 = new javax.swing.JLabel();
         toptemp3 = new javax.swing.JLabel();
-        l = new javax.swing.JTextField();
+        txtL = new javax.swing.JTextField();
         btnCancel = new javax.swing.JButton();
         btnRun = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtResults = new javax.swing.JTextArea();
+        progressBar = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Diffusion Simulator");
@@ -86,21 +90,22 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
         jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         jLabel3.setText("2. Grid Dimention:");
 
-        d.setText("5");
+        txtD.setText("5");
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "3. Temperature", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14))); // NOI18N
 
         toptemp.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         toptemp.setText("Top:");
 
-        t.setText("5");
+        txtT.setText("100");
 
-        b.setText("5");
+        txtB.setText("0");
 
         toptemp1.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         toptemp1.setText("Bottom:");
 
-        r.setText("5");
+        txtR.setText("50");
+        txtR.setToolTipText("");
 
         toptemp2.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         toptemp2.setText("Right:");
@@ -108,7 +113,7 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
         toptemp3.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         toptemp3.setText("Left:");
 
-        l.setText("5");
+        txtL.setText("75");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -120,21 +125,21 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(toptemp1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(b, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtB, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(toptemp)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(t, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtT, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(toptemp2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(r, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtR, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(toptemp3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(l, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtL, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28))
         );
         jPanel3Layout.setVerticalGroup(
@@ -145,19 +150,19 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(toptemp3)
-                            .addComponent(l, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(toptemp2)
-                            .addComponent(r, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(toptemp)
-                            .addComponent(t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(toptemp1)
-                            .addComponent(b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -173,7 +178,7 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(program, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(d, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtD, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
@@ -189,14 +194,14 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(d, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(26, 26, 26)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        btnCancel.setText("Cancel");
+        btnCancel.setText("Done");
         btnCancel.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -214,16 +219,42 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
             }
         });
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Results"));
+
+        txtResults.setBackground(new java.awt.Color(0, 0, 0));
+        txtResults.setColumns(20);
+        txtResults.setForeground(new java.awt.Color(0, 204, 51));
+        txtResults.setRows(5);
+        jScrollPane1.setViewportView(txtResults);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(progressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(btnRun)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnCancel)))
@@ -236,11 +267,14 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                    .addComponent(btnRun, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRun, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
@@ -249,11 +283,59 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCancelActionPerformed
     {//GEN-HEADEREND:event_btnCancelActionPerformed
         dispose();
+        System.exit(0);
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnRunActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRunActionPerformed
     {//GEN-HEADEREND:event_btnRunActionPerformed
-        // TODO add your handling code here:
+        int b, r, t, l, d;
+        b = Integer.valueOf(txtB.getText());
+        l = Integer.valueOf(txtB.getText());
+        r = Integer.valueOf(txtR.getText());
+        t = Integer.valueOf(txtT.getText());
+        d = Integer.valueOf(txtD.getText());
+
+        String programOption = program.getSelectedItem().toString();
+
+        //Run the appropriate program and recieve output
+        switch (programOption)
+        {
+            case "Tpdahp":
+                progressBar.setValue(0);
+                progressBar.setMaximum(4);
+                progressBar.setValue(1);
+                Tpdahp.DiffusionSimulator TpdahpSimulator = new Tpdahp.DiffusionSimulator(d, t, b, l, r);
+                progressBar.setValue(2);
+                TpdahpSimulator.simulate();
+                progressBar.setValue(3);
+                txtResults.setText(TpdahpSimulator.exportPlate().toString());
+                progressBar.setValue(4);
+                break;
+            case "Tpdohp":
+                break;
+            case "Tpfahp":
+                progressBar.setValue(0);
+                progressBar.setMaximum(4);
+                progressBar.setValue(1);
+                Tpfahp.DiffusionSimulator TpfahpSimulator = new Tpfahp.DiffusionSimulator(d, t, b, l, r);
+                progressBar.setValue(2);
+                TpfahpSimulator.simulate();
+                progressBar.setValue(3);
+                txtResults.setText(TpfahpSimulator.exportPlate().toString());
+                progressBar.setValue(4);
+                break;
+            case "Twfahp":
+                progressBar.setValue(0);
+                progressBar.setMaximum(4);
+                progressBar.setValue(1);
+                Twfahp.DiffusionSimulator TwfahpSimulator = new Twfahp.DiffusionSimulator(d, t, b, l, r);
+                progressBar.setValue(2);
+                TwfahpSimulator.simulate();
+                progressBar.setValue(3);
+                txtResults.setText(TwfahpSimulator.exportPlate().toString());
+                progressBar.setValue(4);
+                break;
+        }
     }//GEN-LAST:event_btnRunActionPerformed
 
     /**
@@ -302,23 +384,27 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField b;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnRun;
-    private javax.swing.JTextField d;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField l;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox program;
-    private javax.swing.JTextField r;
-    private javax.swing.JTextField t;
+    private javax.swing.JProgressBar progressBar;
     private javax.swing.JLabel toptemp;
     private javax.swing.JLabel toptemp1;
     private javax.swing.JLabel toptemp2;
     private javax.swing.JLabel toptemp3;
+    private javax.swing.JTextField txtB;
+    private javax.swing.JTextField txtD;
+    private javax.swing.JTextField txtL;
+    private javax.swing.JTextField txtR;
+    private javax.swing.JTextArea txtResults;
+    private javax.swing.JTextField txtT;
     // End of variables declaration//GEN-END:variables
 }
