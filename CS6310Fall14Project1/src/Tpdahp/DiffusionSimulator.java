@@ -6,7 +6,7 @@ public class DiffusionSimulator
     private double[][] oldPlate;
     private double[][] newPlate;
     private int dimension;
-    private int counter;
+    private int counter; 
 
     public Gallhp.Telemetry telemetry;
 
