@@ -1,5 +1,7 @@
 package Gallhp;
 
+import Gallhp.simulator.Tpdahp;
+
 public class DiffusionSimulatorFactory
 {
 

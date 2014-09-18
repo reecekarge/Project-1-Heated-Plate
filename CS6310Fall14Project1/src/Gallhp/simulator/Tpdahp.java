@@ -1,4 +1,4 @@
-package Gallhp;
+package Gallhp.simulator;
 
 import Gallhp.DiffusionSimulator;
 
