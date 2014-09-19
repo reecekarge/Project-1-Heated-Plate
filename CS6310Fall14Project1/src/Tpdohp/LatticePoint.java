@@ -12,12 +12,14 @@ package Tpdohp;
 public class LatticePoint
 {
 
+    //private variables to hold the lattice information
     LatticePoint _left;
     LatticePoint _right;
     LatticePoint _bottom;
     LatticePoint _top;
     double _temperature;
 
+    //constructor that sets the lattice information
     public LatticePoint(LatticePoint _left, LatticePoint _right, LatticePoint _bottom, LatticePoint _top, double _temperature)
     {
         this._left = _left;
