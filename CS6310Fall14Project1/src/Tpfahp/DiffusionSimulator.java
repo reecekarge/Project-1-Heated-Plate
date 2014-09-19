@@ -45,6 +45,14 @@ public class DiffusionSimulator
     //Initializes starting temperatures on the edges of the plate
     private void initialize(float[][] plate, int top, int bot, int left, int right)
     {
+        //initialize the grid
+        for (int i = 0; i < plate.length; i++)
+        {
+            for (int j = 0; j < plate.length; j++)
+            {
+                plate[i][j] = (float) 0;
+            }
+        }
         //initialize the top temp
         for (int i = 0; i < dimension; i++)
         {

@@ -6,7 +6,7 @@ public class DiffusionSimulator
     private double[][] oldPlate;
     private double[][] newPlate;
     private int dimension;
-    private int counter; 
+    private int counter;
 
     public Gallhp.Telemetry telemetry;
 
@@ -51,6 +51,14 @@ public class DiffusionSimulator
     //Initializes starting temperatures on the edges of the plate
     private void initialize(double[][] plate, int top, int bot, int left, int right)
     {
+        //initialize the grid
+        for (int i = 0; i < plate.length; i++)
+        {
+            for (int j = 0; j < plate.length; j++)
+            {
+                plate[i][j] = (double) 0;
+            }
+        }
         //initialize the top temp
         for (int i = 0; i < dimension; i++)
         {
@@ -121,7 +129,6 @@ public class DiffusionSimulator
     public StringBuffer exportPlate()
     {
         StringBuffer ret = new StringBuffer();
-
         for (int j = 1; j < dimension - 1; j++)
         {
             ret.append("------");
@@ -140,7 +147,6 @@ public class DiffusionSimulator
             }
             ret.append("\n");
         }
-
         return ret;
     }
 
