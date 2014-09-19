@@ -56,15 +56,20 @@ public class Demo
             System.out.println("Proper usage: java Tpdahp.Demo -d # -l # -r # -t # -b #");
         } else
         {
-            //Testing memory stuff
-            Runtime runtime = Runtime.getRuntime();
-            System.out.println("Free mem:" + runtime.freeMemory());
-            System.out.println("Free mem:" + runtime.totalMemory());
+
+            long start = System.currentTimeMillis();
 
             //Instanciate and calls the Simulator
             DiffusionSimulator simulator = new DiffusionSimulator(d, t, b, l, r);
             simulator.simulate();
             simulator.printPlate();
+
+            long end = System.currentTimeMillis();
+            Runtime runtime = Runtime.getRuntime();
+            long memory = runtime.totalMemory() - runtime.freeMemory();
+            System.out.println("\n\nPerformance Summary");
+            System.out.println(String.format(" - Time Taken: %dms", end - start));
+            System.out.println(String.format(" - Memory Used: %d bytes", memory));
         }
 
     }

@@ -300,6 +300,8 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
         t = Integer.valueOf(txtT.getText());
         d = Integer.valueOf(txtD.getText());
 
+        txtResults.setVisible(false);
+
         String programOption = program.getSelectedItem().toString();
 
         //Run the appropriate program and recieve output
