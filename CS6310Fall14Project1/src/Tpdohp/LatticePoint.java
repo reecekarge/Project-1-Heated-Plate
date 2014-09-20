@@ -3,27 +3,27 @@ package Tpdohp;
 
 
 
-public class MikesLatticePoint //extends Point
+public class LatticePoint //extends Point
 {
 	private int x;
 	private int y;
 
 	public double temp = 0; 
-	public MikesLatticePoint leftPoint = null;
-	public MikesLatticePoint rightPoint = null;
-	public MikesLatticePoint topPoint = null;
-	public MikesLatticePoint bottomPoint = null;
+	public LatticePoint leftPoint = null;
+	public LatticePoint rightPoint = null;
+	public LatticePoint topPoint = null;
+	public LatticePoint bottomPoint = null;
 	
-	public MikesLatticePoint()
+	public LatticePoint()
 	{
 		//Zero arg
 	}
-	public MikesLatticePoint(int x, int y)
+	public LatticePoint(int x, int y)
 	{
 		this.x = x;
 		this.y = y;
 	}
-	public MikesLatticePoint(int x, int y, double temp)
+	public LatticePoint(int x, int y, double temp)
 	{
 		this.x = x;
 		this.y = y;
@@ -47,42 +47,42 @@ public class MikesLatticePoint //extends Point
 		temp = t;
 	}
 	
-	public void setLeftPoint(MikesLatticePoint l)
+	public void setLeftPoint(LatticePoint l)
 	{
 		
 		leftPoint = l;
 	}
-	public void setRightPoint(MikesLatticePoint r)
+	public void setRightPoint(LatticePoint r)
 	{
 		
 		rightPoint = r;
 	}
-	public void setTopPoint(MikesLatticePoint t)
+	public void setTopPoint(LatticePoint t)
 	{
 		
 		topPoint = t;
 	}
-	public void setBottomPoint(MikesLatticePoint b)
+	public void setBottomPoint(LatticePoint b)
 	{
 		
 		bottomPoint = b;
 	}
-	public MikesLatticePoint getLeftPoint()
+	public LatticePoint getLeftPoint()
 	{
 		return leftPoint;
 		
 	}
-	public MikesLatticePoint getRightPoint()
+	public LatticePoint getRightPoint()
 	{
 		return rightPoint;
 		
 	}
-	public MikesLatticePoint getTopPoint()
+	public LatticePoint getTopPoint()
 	{
 		return topPoint;
 		
 	}
-	public MikesLatticePoint getBottomPoint()
+	public LatticePoint getBottomPoint()
 	{
 		return bottomPoint;
 		

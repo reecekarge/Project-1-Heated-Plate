@@ -1,10 +1,9 @@
 package Tpdohp;
 
 import java.text.DecimalFormat;
-import java.util.HashMap;
 
 
-public class Demotest {
+public class Demo {
 
 	public static void main(String[] args) {
 
@@ -17,9 +16,7 @@ public class Demotest {
 		
 		double significantDifference = 0;
 		Boolean done = false;
-		MikesLatticePoint holderP = new MikesLatticePoint();
-		MikesLatticePoint holderP2 = new MikesLatticePoint();
-		//HashMap<Coords, MikesLatticePoint> map = new HashMap<Coords, MikesLatticePoint>();
+		LatticePoint holderP = new LatticePoint();
 		Coords holderC = new Coords(0,0);
 		DecimalFormat td = new DecimalFormat("#.00");
 		
@@ -27,11 +24,7 @@ public class Demotest {
 		plate.createGrid();
 		plate.setPointNeighbors();
 		
-	//	Grid oldPlate = new Grid(dim, left, right, top, bottom);
-	//	oldPlate.createGrid();
-	//	oldPlate.setPointNeighbors();
-		
-		//System.out.println(plate.toString());
+
 		while(!done)
 		{
 			String output = "";

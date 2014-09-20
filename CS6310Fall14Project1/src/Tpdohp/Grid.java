@@ -14,8 +14,8 @@ public class Grid
 	int bottomTemp = 0;
 	
 	Boolean done = false;
-	MikesLatticePoint holderP = new MikesLatticePoint();
-	HashMap<Coords, MikesLatticePoint> map = new HashMap<Coords, MikesLatticePoint>();
+	LatticePoint holderP = new LatticePoint();
+	HashMap<Coords, LatticePoint> map = new HashMap<Coords, LatticePoint>();
 	Coords holderC = new Coords(0,0);
 	Set<Coords> keys = map.keySet();
 	DecimalFormat td = new DecimalFormat("#.00");
@@ -42,7 +42,7 @@ public class Grid
 				//Set Temp of Top
 				if (y == 0)
 				{
-					MikesLatticePoint p = new MikesLatticePoint(x,y,topTemp);
+					LatticePoint p = new LatticePoint(x,y,topTemp);
 					Coords c = new Coords(x,y);
 					map.put(c, p);
 					//System.out.print(" "+p.temp);
@@ -51,7 +51,7 @@ public class Grid
 				// Set Temp of Bottom
 				else if (y == dimension + 1)
 				{
-					MikesLatticePoint p = new MikesLatticePoint(x,y,bottomTemp);
+					LatticePoint p = new LatticePoint(x,y,bottomTemp);
 					Coords c = new Coords(x,y);
 					map.put(c, p);
 					//System.out.print(" "+p.temp);
@@ -60,7 +60,7 @@ public class Grid
 				// Set Temp of Left
 				else if (x == 0)
 				{
-					MikesLatticePoint p = new MikesLatticePoint(x,y,leftTemp);
+					LatticePoint p = new LatticePoint(x,y,leftTemp);
 					Coords c = new Coords(x,y);
 					map.put(c, p);
 					//System.out.print(" "+p.temp);
@@ -68,7 +68,7 @@ public class Grid
 				// Set Temp of Right
 				else if (x == dimension+1)
 				{
-					MikesLatticePoint p = new MikesLatticePoint(x,y,rightTemp);
+					LatticePoint p = new LatticePoint(x,y,rightTemp);
 					Coords c = new Coords(x,y);
 					map.put(c, p);
 					//System.out.print(" "+p.temp);
@@ -76,7 +76,7 @@ public class Grid
 				//set everything else within border
 				else
 				{
-				MikesLatticePoint p = new MikesLatticePoint(x,y);
+				LatticePoint p = new LatticePoint(x,y);
 				
 				Coords c = new Coords(x,y);
 				
@@ -121,11 +121,11 @@ public class Grid
 	        }
 	        System.out.println();
 		}
-	public HashMap<Coords, MikesLatticePoint> getMap()
+	public HashMap<Coords, LatticePoint> getMap()
 	{
 		return map;
 	}
-	public void put(Coords holderC2, MikesLatticePoint holderP2) 
+	public void put(Coords holderC2, LatticePoint holderP2) 
 	{
 		map.put(holderC2, holderP2);
 		
@@ -134,7 +134,7 @@ public class Grid
 	public String toString()
 	{
 		String all = "";
-		for (Entry<Coords, MikesLatticePoint> e : map.entrySet()) {
+		for (Entry<Coords, LatticePoint> e : map.entrySet()) {
 		    //to get key
 		    
 		    //and to get value
