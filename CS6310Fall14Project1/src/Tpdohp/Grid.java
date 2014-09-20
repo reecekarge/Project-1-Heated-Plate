@@ -118,7 +118,7 @@ public class Grid
 	        		holderP.setTopPoint(map.get(coordT));
 	        		holderP.setBottomPoint(map.get(coordB));
 
-	        		map.replace(p, holderP);
+	        		map.put(p, holderP);
 	        	}
 	        }
 
