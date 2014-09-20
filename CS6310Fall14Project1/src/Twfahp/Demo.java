@@ -62,14 +62,16 @@ public class Demo
             //Instanciate and calls the Simulator
             DiffusionSimulator simulator = new DiffusionSimulator(d, t, b, l, r);
             simulator.simulate();
-            simulator.printPlate();
 
             long end = System.currentTimeMillis();
+            simulator.printPlate();
+
             Runtime runtime = Runtime.getRuntime();
             long memory = runtime.totalMemory() - runtime.freeMemory();
             System.out.println("\n\nPerformance Summary");
             System.out.println(String.format(" - Time Taken: %dms", end - start));
             System.out.println(String.format(" - Memory Used: %d bytes", memory));
+            System.out.println(String.format(" - Number of iteration: %d", simulator.getNumberOfIterations()));
         }
 
     }

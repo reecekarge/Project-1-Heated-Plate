@@ -163,4 +163,9 @@ public class DiffusionSimulator
         }
         return true;
     }
+
+    public int getNumberOfIterations()
+    {
+        return counter;
+    }
 }
