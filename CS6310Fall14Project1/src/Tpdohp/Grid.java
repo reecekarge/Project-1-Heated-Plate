@@ -1,27 +1,33 @@
 package Tpdohp;
+import java.text.DecimalFormat;
 import java.util.HashMap;
+import java.util.Map.Entry;
 import java.util.Set;
 
-public class Grid
+public class Grid 
 {
+	
 	int dimension = 0;
 	int leftTemp = 0;
 	int rightTemp = 0;
 	int topTemp = 0;
 	int bottomTemp = 0;
+	
 	Boolean done = false;
 	MikesLatticePoint holderP = new MikesLatticePoint();
 	HashMap<Coords, MikesLatticePoint> map = new HashMap<Coords, MikesLatticePoint>();
-
+	Coords holderC = new Coords(0,0);
+	Set<Coords> keys = map.keySet();
+	DecimalFormat td = new DecimalFormat("#.00");
 	//Grid self = this;
 	public Grid(int dimension, int leftTemp, int rightTemp, int topTemp, int bottomTemp)
 	{
-		this.dimension = dimension;
+		this.dimension = dimension; 
 		this.leftTemp = leftTemp;
 		this.rightTemp = rightTemp;
 		this.topTemp = topTemp;
 		this.bottomTemp = bottomTemp;
-
+		
 	}
 	/*
 	 * createGrid() method:
@@ -40,7 +46,7 @@ public class Grid
 					Coords c = new Coords(x,y);
 					map.put(c, p);
 					//System.out.print(" "+p.temp);
-
+					
 				}
 				// Set Temp of Bottom
 				else if (y == dimension + 1)
@@ -49,7 +55,7 @@ public class Grid
 					Coords c = new Coords(x,y);
 					map.put(c, p);
 					//System.out.print(" "+p.temp);
-
+					
 				}
 				// Set Temp of Left
 				else if (x == 0)
@@ -70,39 +76,31 @@ public class Grid
 				//set everything else within border
 				else
 				{
-				MikesLatticePoint p = new MikesLatticePoint(x,y,this);
-
+				MikesLatticePoint p = new MikesLatticePoint(x,y);
+				
 				Coords c = new Coords(x,y);
-
+				
 				map.put(c, p);
 				//System.out.print(" "+p.temp);
 				}
-
+				
 			}
 			System.out.println();
 		}
-
-
-
 
 	}
 	/*
 	 * Point all the inner LatticePoints to their neighbors
 	 */
 	public void setPointNeighbors()
-	{
-
-
-			Set<Coords> keys = map.keySet();
-
-
+	{	
 	        for(Coords p:keys)
 	        {
 	        	holderP = map.get(p);
-
-
-
-	        	if (holderP.getX() == 0 || holderP.getY() == 0)
+	        	
+	        	
+	        	
+	        	if (holderP.getX() == 0 || holderP.getY() == 0 || holderP.getX() == dimension+1 || holderP.getY() == dimension+1)
 	        	{
 	        		//do nothing, these are border Points
 	        	}
@@ -121,19 +119,27 @@ public class Grid
 	        		map.put(p, holderP);
 	        	}
 	        }
-
-
-
-
-
 	        System.out.println();
 		}
-	public void loopTemp()
+	public HashMap<Coords, MikesLatticePoint> getMap()
 	{
-		Coords c = new Coords(2,2);
-		System.out.print(map.get(c).getTemp());
-
+		return map;
 	}
-
-
+	public void put(Coords holderC2, MikesLatticePoint holderP2) 
+	{
+		map.put(holderC2, holderP2);
+		
+	}
+	@Override
+	public String toString()
+	{
+		String all = "";
+		for (Entry<Coords, MikesLatticePoint> e : map.entrySet()) {
+		    //to get key
+		    
+		    //and to get value
+		    all +=e.getValue().temp+" ";
+		}
+		return all;
+	}
 }
