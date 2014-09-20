@@ -1,14 +1,14 @@
 package Tpdohp;
 
-import java.awt.Point;
 
-@SuppressWarnings("serial")
-public class MikesLatticePoint extends Point
+
+
+public class MikesLatticePoint //extends Point
 {
 	private int x;
 	private int y;
-	private Grid grid = null;
-	public double temp = 1; 
+
+	public double temp = 0; 
 	public MikesLatticePoint leftPoint = null;
 	public MikesLatticePoint rightPoint = null;
 	public MikesLatticePoint topPoint = null;
@@ -20,30 +20,31 @@ public class MikesLatticePoint extends Point
 	}
 	public MikesLatticePoint(int x, int y)
 	{
-		super(x,y);
+		this.x = x;
+		this.y = y;
 	}
 	public MikesLatticePoint(int x, int y, double temp)
 	{
-		super(x,y);
+		this.x = x;
+		this.y = y;
 		this.temp = temp;
 		
 	}
-	public MikesLatticePoint(int x, int y, Grid grid)
+	
+	
+	public void setTemp()
 	{
-		super(x,y);
-		this.grid = grid;
+		temp=(leftPoint.temp+rightPoint.temp+topPoint.temp+bottomPoint.temp)/4;
 		
-		MikesLatticePoint p = new MikesLatticePoint(x,y);
-		leftPoint = p;
-
-				
+							 
 	}
-	
-	
 	public double getTemp()
 	{
-		return (leftPoint.getTemp()+rightPoint.getTemp()+topPoint.getTemp()+bottomPoint.getTemp())/4;
-							 
+		return temp;
+	}
+	public void setTemp(double t)
+	{
+		temp = t;
 	}
 	
 	public void setLeftPoint(MikesLatticePoint l)
@@ -66,24 +67,41 @@ public class MikesLatticePoint extends Point
 		
 		bottomPoint = b;
 	}
+	public MikesLatticePoint getLeftPoint()
+	{
+		return leftPoint;
+		
+	}
+	public MikesLatticePoint getRightPoint()
+	{
+		return rightPoint;
+		
+	}
+	public MikesLatticePoint getTopPoint()
+	{
+		return topPoint;
+		
+	}
+	public MikesLatticePoint getBottomPoint()
+	{
+		return bottomPoint;
+		
+	}
+	@Override
+	public String toString()
+	{
+		return "("+this.getX()+","+this.getY()+")";
+		
+	}
+	public int getX() 
+    { 
+    	return x; 
+    }
+	public int getY() 
+    { 
+    	return y; 
+    }
 	
-	/*
-	public double getTopTemp()
-	{
-		return grid.getPointTemp(this.x,this.y+1).getTemp();
-	}
-	public double getLeftTemp()
-	{
-		return grid.getPointTemp(this.x-1,this.y).getTemp();
-	}
-	public double getRightTemp()
-	{
-		return grid.getPointTemp(this.x+1,this.y).getTemp();
-	}
-	public double getBottomTemp()
-	{
-		return grid.getPointTemp(this.x,this.y-1).getTemp();
-	}
-	*/
+
 	
 }
