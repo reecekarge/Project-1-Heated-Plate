@@ -8,14 +8,8 @@ public class DiffusionSimulator
     private int dimension;
     private int counter;
 
-    public Gallhp.Telemetry telemetry;
-
     public DiffusionSimulator(int dim, int top, int bot, int left, int right)
     {
-        //Test values
-        telemetry.CupTime = 5;
-        telemetry.MemoryUsed = 1;
-
         this.dimension = dim + 2;
         oldPlate = new double[dimension][dimension];
         newPlate = new double[dimension][dimension];
