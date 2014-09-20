@@ -63,7 +63,6 @@ public class Demo
             simulator.printResults();
 
             long end = System.currentTimeMillis();
-            simulator.printResults();
 
             Runtime runtime = Runtime.getRuntime();
             long memory = runtime.totalMemory() - runtime.freeMemory();
