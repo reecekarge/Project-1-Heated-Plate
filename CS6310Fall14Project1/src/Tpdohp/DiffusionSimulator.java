@@ -164,4 +164,9 @@ public class DiffusionSimulator
         }
         return true;
     }
+
+    public int getNumberOfOperations()
+    {
+        return counter;
+    }
 }

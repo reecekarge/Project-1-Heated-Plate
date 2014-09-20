@@ -58,9 +58,19 @@ public class Demo
             System.out.println("Proper usage: java Tpdahp.Demo -d # -l # -r # -t # -b #");
         } else
         {
+            long start = System.currentTimeMillis();
+
             DiffusionSimulator simulator = new DiffusionSimulator(d, t, b, l, r);
             simulator.simulate();
+
             simulator.printResults();
+            long end = System.currentTimeMillis();
+            Runtime runtime = Runtime.getRuntime();
+            long memory = runtime.totalMemory() - runtime.freeMemory();
+            System.out.println("\n\nPerformance Summary");
+            System.out.println(String.format(" - Time Taken: %dms", end - start));
+            System.out.println(String.format(" - Memory Used: %d bytes", memory));
+            System.out.println(String.format(" - Number of iterations: %d", simulator.getNumberOfIterations()));
         }
 
     }
