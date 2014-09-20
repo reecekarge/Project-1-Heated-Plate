@@ -8,11 +8,12 @@ public class Demo
 
 	public static void main(String[] args) 
 	{
+		
 		int dim = 0;
-		int left = 0;
-		int right = 0;
-		int top = 0;
-		int bottom = 0;
+		int left = -1;
+		int right = -1;
+		int top = -1;
+		int bottom = -1;
 		
 		double significantDifference = 0;
 		Boolean done = false;
@@ -25,8 +26,9 @@ public class Demo
 		int i = 0, j;
         String arg;
         char flag;
-        int d = 0, t = -1, b = -1, l = -1, r = -1;
-
+       
+        
+        
         while (i < args.length)
         {
         	
@@ -39,19 +41,19 @@ public class Demo
                     switch (flag)
                     {
                         case 'd':
-                            d = Integer.valueOf(args[i++]);
-                            break;
-                        case 't':
-                            t = Integer.valueOf(args[i++]);
-                            break;
-                        case 'b':
-                            b = Integer.valueOf(args[i++]);
+                            dim = Integer.valueOf(args[i++]);
                             break;
                         case 'l':
-                            l = Integer.valueOf(args[i++]);
+                           left  = Integer.valueOf(args[i++]);
                             break;
                         case 'r':
-                            r = Integer.valueOf(args[i++]);
+                            right = Integer.valueOf(args[i++]);
+                            break;
+                        case 't':
+                            top = Integer.valueOf(args[i++]);
+                            break;
+                        case 'b':
+                            bottom = Integer.valueOf(args[i++]);
                             break;
                         default:
                             System.err.println("ParseCmdLine: illegal option " + flag);
@@ -60,10 +62,11 @@ public class Demo
                 }
             }
         }
-        if (d == 0 || t == -1 || l == -1 || r == -1 || b == -1)
+        if (dim <= 0 || left < 0 || left > 100 || right < 0 || right > 100 || top < 0 || top > 100 || bottom < 0 || bottom > 100 )
         {
             System.out.println("Invalid number of arguements.");
-            System.out.println("Proper usage: java Tpdahp.Demo -d # -l # -r # -t # -b #");
+            System.out.println("Your Parameter values: d="+dim+" l="+left+" r="+right+" t="+top+" b="+bottom);
+            System.out.println("Proper usage: java Tpdahp.Demo -d # -l # -r # -t # -b #\nValue for d > 0, Values for rest 0 - 100");
         } else
         {
         	long start = System.currentTimeMillis();
@@ -111,16 +114,18 @@ public class Demo
 			}
 			
 			System.out.println(output);
+			}
+		
+		 	long end = System.currentTimeMillis();
+			Runtime runtime = Runtime.getRuntime();
+	        long memory = runtime.totalMemory() - runtime.freeMemory();
+	        System.out.println("\n\nPerformance Summary");
+	        System.out.println((" - Time Taken: "+ (end - start)));
+	        System.out.println((" - Memory Used: bytes"+ memory));
+	        System.out.println((" - Number of iterations: "+iterations ));
+		
+	 
 		}
-		long end = System.currentTimeMillis();
-		Runtime runtime = Runtime.getRuntime();
-        long memory = runtime.totalMemory() - runtime.freeMemory();
-        System.out.println("\n\nPerformance Summary");
-        System.out.println(String.format(" - Time Taken: %dms", end - start));
-        System.out.println(String.format(" - Memory Used: %d bytes", memory));
-        System.out.println(String.format(" - Number of iterations: %d "+iterations ));
-		//System.out.println(plate.toString());
-	}
 	}
 
 }
