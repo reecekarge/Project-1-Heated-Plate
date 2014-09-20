@@ -60,10 +60,10 @@ public class Demo
 
             DiffusionSimulator simulator = new DiffusionSimulator(d, t, b, l, r);
             simulator.simulate();
+
             simulator.printResults();
 
             long end = System.currentTimeMillis();
-            simulator.printResults();
 
             Runtime runtime = Runtime.getRuntime();
             long memory = runtime.totalMemory() - runtime.freeMemory();

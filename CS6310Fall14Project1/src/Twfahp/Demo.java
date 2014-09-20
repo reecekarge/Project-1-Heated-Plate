@@ -62,6 +62,7 @@ public class Demo
             //Instanciate and calls the Simulator
             DiffusionSimulator simulator = new DiffusionSimulator(d, t, b, l, r);
             simulator.simulate();
+
             simulator.printResults();
 
             long end = System.currentTimeMillis();
