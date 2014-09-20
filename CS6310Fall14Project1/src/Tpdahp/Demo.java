@@ -60,7 +60,7 @@ public class Demo
 
             DiffusionSimulator simulator = new DiffusionSimulator(d, t, b, l, r);
             simulator.simulate();
-            simulator.printPlate();
+            simulator.printResults();
 
             long end = System.currentTimeMillis();
             Runtime runtime = Runtime.getRuntime();
@@ -79,7 +79,7 @@ public class Demo
 //					Integer.valueOf(args[2])
 //                        );
 //			simulator.simulate();
-//			simulator.printPlate();
+//			simulator.printResults();
 //		}else{
 //			//Print out help
 //			System.out.println("Invalid number of arguements.");

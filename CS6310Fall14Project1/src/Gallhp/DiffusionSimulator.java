@@ -14,7 +14,7 @@ public abstract class  DiffusionSimulator extends JPanel{
 	int pixelSize = 900;
 	int squareSize =0;
 	ArrayList<ArrayList<JTextArea>> grid = new ArrayList<ArrayList<JTextArea>>();
-	
+
 	public DiffusionSimulator(int dim) {
 		super();
 		setSize(pixelSize, pixelSize);
@@ -27,7 +27,7 @@ public abstract class  DiffusionSimulator extends JPanel{
 			JTextArea area = new JTextArea();
 			area.setSize(squareSize, squareSize);
 			area.setBorder(BorderFactory.createLineBorder(Color.black, 1));
-			
+
 			area.setBackground(Color.getHSBColor(.666f, 1f, 1f));
 			area.setVisible(true);
 			area.setEditable(false);
@@ -56,8 +56,9 @@ public abstract class  DiffusionSimulator extends JPanel{
 		}
 	}
 	abstract public void simulate();
-	abstract public void printPlate();
+	abstract public void printResults();
+        abstract public StringBuffer exportResults();
 	abstract protected boolean done();
-	
-	
+
+
 }

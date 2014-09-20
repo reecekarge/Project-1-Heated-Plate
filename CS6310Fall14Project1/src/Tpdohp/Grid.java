@@ -2,7 +2,7 @@ package Tpdohp;
 import java.util.HashMap;
 import java.util.Set;
 
-public class Grid 
+public class Grid
 {
 	int dimension = 0;
 	int leftTemp = 0;
@@ -16,12 +16,12 @@ public class Grid
 	//Grid self = this;
 	public Grid(int dimension, int leftTemp, int rightTemp, int topTemp, int bottomTemp)
 	{
-		this.dimension = dimension; 
+		this.dimension = dimension;
 		this.leftTemp = leftTemp;
 		this.rightTemp = rightTemp;
 		this.topTemp = topTemp;
 		this.bottomTemp = bottomTemp;
-		
+
 	}
 	/*
 	 * createGrid() method:
@@ -40,7 +40,7 @@ public class Grid
 					Coords c = new Coords(x,y);
 					map.put(c, p);
 					//System.out.print(" "+p.temp);
-					
+
 				}
 				// Set Temp of Bottom
 				else if (y == dimension + 1)
@@ -49,7 +49,7 @@ public class Grid
 					Coords c = new Coords(x,y);
 					map.put(c, p);
 					//System.out.print(" "+p.temp);
-					
+
 				}
 				// Set Temp of Left
 				else if (x == 0)
@@ -71,19 +71,19 @@ public class Grid
 				else
 				{
 				MikesLatticePoint p = new MikesLatticePoint(x,y,this);
-				
+
 				Coords c = new Coords(x,y);
-				
+
 				map.put(c, p);
 				//System.out.print(" "+p.temp);
 				}
-				
+
 			}
 			System.out.println();
 		}
-		
-		
-		
+
+
+
 
 	}
 	/*
@@ -91,17 +91,17 @@ public class Grid
 	 */
 	public void setPointNeighbors()
 	{
-			
-			
+
+
 			Set<Coords> keys = map.keySet();
-			
-					
+
+
 	        for(Coords p:keys)
 	        {
 	        	holderP = map.get(p);
-	        	
-	        	
-	        	
+
+
+
 	        	if (holderP.getX() == 0 || holderP.getY() == 0)
 	        	{
 	        		//do nothing, these are border Points
@@ -117,23 +117,23 @@ public class Grid
 	        		holderP.setRightPoint(map.get(coordR));
 	        		holderP.setTopPoint(map.get(coordT));
 	        		holderP.setBottomPoint(map.get(coordB));
-	        		
+
 	        		map.replace(p, holderP);
 	        	}
 	        }
-			
-	       
-	        	
-	        	
-	  
+
+
+
+
+
 	        System.out.println();
 		}
 	public void loopTemp()
 	{
 		Coords c = new Coords(2,2);
 		System.out.print(map.get(c).getTemp());
-		
+
 	}
 
-	
+
 }

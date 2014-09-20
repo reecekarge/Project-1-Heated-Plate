@@ -93,7 +93,7 @@ public class Tpfahp extends DiffusionSimulator {
     }
 
     //prints out the plate
-    public void printPlate()
+    public void printResults()
     {
         for (int j = 1; j < dimension - 1; j++)
         {
@@ -158,6 +158,12 @@ public class Tpfahp extends DiffusionSimulator {
             }
         }
         return true;
+    }
+
+    @Override
+    public StringBuffer exportResults()
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 

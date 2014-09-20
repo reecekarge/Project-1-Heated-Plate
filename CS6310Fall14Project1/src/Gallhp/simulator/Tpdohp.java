@@ -15,21 +15,21 @@ public class Tpdohp extends DiffusionSimulator {
 
 	}
 
-	
+
 	protected void initialize(double[][] plate, int top, int bot, int left,
 			int right) {
 		// TODO Auto-generated method stub
 
 	}
 
-	
+
 	protected void swap(double[][] oldPlate, double[][] newPlate) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void printPlate() {
+	public void printResults() {
 		// TODO Auto-generated method stub
 
 	}
@@ -40,6 +40,12 @@ public class Tpdohp extends DiffusionSimulator {
 		return false;
 	}
 
-	
+        @Override
+        public StringBuffer exportResults()
+        {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+
 
 }

@@ -13,7 +13,7 @@ public class Tpdahp extends DiffusionSimulator {
 		// Initialize the temperatures of the edge values and the plate itself
 		initialize(oldPlate, top, bot, left, right);
 		initialize(newPlate, top, bot, left, right);
-   
+
 		counter = 0;
 	}
 
@@ -97,7 +97,7 @@ public class Tpdahp extends DiffusionSimulator {
 	}
 
 	// prints out the plate
-	public void printPlate() {
+	public void printResults() {
 		for (int j = 0; j < dimension; j++) {
 			System.out.print("----");
 		}
@@ -130,4 +130,10 @@ public class Tpdahp extends DiffusionSimulator {
 		}
 		return true;
 	}
+
+        @Override
+        public StringBuffer exportResults()
+        {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
 }

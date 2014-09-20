@@ -313,7 +313,7 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
                 progressBar.setValue(2);
                 TpdahpSimulator.simulate();
                 progressBar.setValue(3);
-                txtResults.setText(TpdahpSimulator.exportPlate().toString());
+                txtResults.setText(TpdahpSimulator.exportResults().toString());
                 progressBar.setValue(4);
                 break;
             case "Tpdohp":
@@ -324,7 +324,7 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
                 progressBar.setValue(2);
                 TpfahpSimulator.simulate();
                 progressBar.setValue(3);
-                txtResults.setText(TpfahpSimulator.exportPlate().toString());
+                txtResults.setText(TpfahpSimulator.exportResults().toString());
                 progressBar.setValue(4);
                 break;
             case "Twfahp":
@@ -333,7 +333,7 @@ public class DiffusionSimulatorGUI2 extends javax.swing.JFrame
                 progressBar.setValue(2);
                 TwfahpSimulator.simulate();
                 progressBar.setValue(3);
-                txtResults.setText(TwfahpSimulator.exportPlate().toString());
+                txtResults.setText(TwfahpSimulator.exportResults().toString());
                 progressBar.setValue(4);
 
                 break;

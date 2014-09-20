@@ -97,7 +97,7 @@ public class DiffusionSimulator
     }
 
     //prints out the plate
-    public void printPlate()
+    public void printResults()
     {
         for (int j = 1; j < dimension - 1; j++)
         {
@@ -120,7 +120,7 @@ public class DiffusionSimulator
     }
 
     //Returns the results in a string buffer
-    public StringBuffer exportPlate()
+    public StringBuffer exportResults()
     {
         StringBuffer ret = new StringBuffer();
         for (int j = 1; j < dimension - 1; j++)
