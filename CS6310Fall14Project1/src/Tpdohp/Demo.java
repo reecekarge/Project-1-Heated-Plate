@@ -90,7 +90,7 @@ public class Demo
 				{					
 					holderC = new Coords(x,y);
 					holderP = plate.getMap().get(holderC);
-					//System.out.println(holderP.getChange());
+					
 					holderP.setTemp();
 					if (holderP.getChange() > significantDifference)
 					{
@@ -108,7 +108,7 @@ public class Demo
 				
 				}
 			}
-			if (significantDifference < .1 || iterations > 9999)				
+			if (significantDifference <= .1 || iterations > 9999)				
 			{
 				done = true;
 			}
