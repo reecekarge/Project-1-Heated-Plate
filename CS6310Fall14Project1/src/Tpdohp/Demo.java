@@ -8,25 +8,28 @@ public class Demo
 
 	public static void main(String[] args) 
 	{
-		int dim = 6;
-		int left = 100;
+		int dim = 0;
+		int left = 0;
 		int right = 0;
-		int top = 25;
-		int bottom = 40;
+		int top = 0;
+		int bottom = 0;
 		
 		double significantDifference = 0;
 		Boolean done = false;
 		LatticePoint holderP = new LatticePoint();
 		Coords holderC = new Coords(0,0);
 		DecimalFormat td = new DecimalFormat("#.00");
+		int iterations = 0;
+		
 		
 		int i = 0, j;
-		String arg;
+        String arg;
         char flag;
-        int d = 0, t = 0, b = 0, l = 0, r = 0;
-		while (i < args.length)
-        {
+        int d = 0, t = -1, b = -1, l = -1, r = -1;
 
+        while (i < args.length)
+        {
+        	
             if (args[i].startsWith("-"))
             {
                 arg = args[i++];
@@ -57,7 +60,13 @@ public class Demo
                 }
             }
         }
-		
+        if (d == 0 || t == -1 || l == -1 || r == -1 || b == -1)
+        {
+            System.out.println("Invalid number of arguements.");
+            System.out.println("Proper usage: java Tpdahp.Demo -d # -l # -r # -t # -b #");
+        } else
+        {
+        	long start = System.currentTimeMillis();
 
 		
 		
@@ -69,6 +78,7 @@ public class Demo
 
 		while(!done)
 		{
+			iterations++;
 			String output = "";
 			for(int y = 1; y <= dim; y++)
 			{
@@ -95,16 +105,22 @@ public class Demo
 				
 				}
 			}
-			if (significantDifference < .2)				
+			if (significantDifference < .1 || iterations > 9999)				
 			{
 				done = true;
 			}
 			
 			System.out.println(output);
 		}
-
+		long end = System.currentTimeMillis();
+		Runtime runtime = Runtime.getRuntime();
+        long memory = runtime.totalMemory() - runtime.freeMemory();
+        System.out.println("\n\nPerformance Summary");
+        System.out.println(String.format(" - Time Taken: %dms", end - start));
+        System.out.println(String.format(" - Memory Used: %d bytes", memory));
+        System.out.println(String.format(" - Number of iterations: %d "+iterations ));
 		//System.out.println(plate.toString());
-		
+	}
 	}
 
 }
