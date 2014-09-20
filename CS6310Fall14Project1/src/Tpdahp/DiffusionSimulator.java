@@ -147,7 +147,7 @@ public class DiffusionSimulator
     //returns true if counter is over 3000 or the change in values was negligible last iteration
     public boolean done()
     {
-        if (counter > 3000)
+        if (counter > 10000)
         {
             return true;
         }
@@ -162,5 +162,10 @@ public class DiffusionSimulator
             }
         }
         return true;
+    }
+
+    public int getNumberOfIterations()
+    {
+        return counter;
     }
 }

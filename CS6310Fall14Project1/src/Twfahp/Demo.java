@@ -65,11 +65,14 @@ public class Demo
             simulator.printResults();
 
             long end = System.currentTimeMillis();
+            simulator.printResults();
+
             Runtime runtime = Runtime.getRuntime();
             long memory = runtime.totalMemory() - runtime.freeMemory();
             System.out.println("\n\nPerformance Summary");
             System.out.println(String.format(" - Time Taken: %dms", end - start));
             System.out.println(String.format(" - Memory Used: %d bytes", memory));
+            System.out.println(String.format(" - Number of iteration: %d", simulator.getNumberOfIterations()));
         }
 
     }
