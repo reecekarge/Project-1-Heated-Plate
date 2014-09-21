@@ -18,7 +18,7 @@ public class Grid
 	HashMap<Coords, LatticePoint> map = new HashMap<Coords, LatticePoint>();
 	Coords holderC = new Coords(0,0);
 	Set<Coords> keys = map.keySet();
-	DecimalFormat td = new DecimalFormat("#.00");
+	DecimalFormat td = new DecimalFormat("##.00");
 	//Grid self = this;
 	public Grid(int dimension, int leftTemp, int rightTemp, int topTemp, int bottomTemp)
 	{
