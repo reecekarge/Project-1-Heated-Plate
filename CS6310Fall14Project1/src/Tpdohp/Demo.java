@@ -3,35 +3,35 @@ package Tpdohp;
 import java.text.DecimalFormat;
 
 
-public class Demo 
+public class Demo
 {
 
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
-		
+
 		int dim = 0;
 		int left = -1;
 		int right = -1;
 		int top = -1;
 		int bottom = -1;
-		
+
 		double significantDifference = 0;
 		Boolean done = false;
 		LatticePoint holderP = new LatticePoint();
 		Coords holderC = new Coords(0,0);
 		DecimalFormat td = new DecimalFormat("#.00");
 		int iterations = 0;
-		
-		
+
+
 		int i = 0, j;
         String arg;
         char flag;
-       
-        
-        
+
+
+
         while (i < args.length)
         {
-        	
+
             if (args[i].startsWith("-"))
             {
                 arg = args[i++];
@@ -71,13 +71,9 @@ public class Demo
         {
         	long start = System.currentTimeMillis();
 
-		
-		
-		
 		Grid plate = new Grid(dim, left, right, top, bottom);
 		plate.createGrid();
 		plate.setPointNeighbors();
-		
 
 		while(!done)
 		{
@@ -87,44 +83,45 @@ public class Demo
 			{
 				significantDifference = 0;
 				for(int x = 1; x <= dim; x++)
-				{					
+				{
 					holderC = new Coords(x,y);
 					holderP = plate.getMap().get(holderC);
-					
+
 					holderP.setTemp();
 					if (holderP.getChange() > significantDifference)
 					{
 						significantDifference = holderP.getChange();
 					}
-					
+
 					plate.put(holderC,holderP);
-					output += (holderP.toString()+td.format(holderP.getTemp())+"  ");
-					
-					
-					if (holderP.getX() == dim)						
+					//output += (holderP.toString()+td.format(holderP.getTemp())+"  ");
+                                        output += ("["+td.format(holderP.getTemp())+"]");
+
+
+					if (holderP.getX() == dim)
 					{
 						output += "\n";
 					}
-				
+
 				}
 			}
-			if (significantDifference <= .1 || iterations > 9999)				
+			if (significantDifference <= .1 || iterations > 9999)
 			{
 				done = true;
 			}
-			
+
 			System.out.println(output);
 			}
-		
+
 		 	long end = System.currentTimeMillis();
 			Runtime runtime = Runtime.getRuntime();
 	        long memory = runtime.totalMemory() - runtime.freeMemory();
 	        System.out.println("\n\nPerformance Summary");
-	        System.out.println((" - Time Taken: "+ (end - start)));
-	        System.out.println((" - Memory Used: bytes"+ memory));
-	        System.out.println((" - Number of iterations: "+iterations ));
-		
-	 
+	        System.out.println(String.format(" - Time Taken: %dms", end - start));
+	        System.out.println(String.format(" - Memory Used: %d bytes", memory));
+	        System.out.println(String.format(" - Number of iterations: %d", iterations));
+
+
 		}
 	}
 

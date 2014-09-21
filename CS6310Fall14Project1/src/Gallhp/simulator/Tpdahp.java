@@ -98,17 +98,10 @@ public class Tpdahp extends DiffusionSimulator {
 
 	// prints out the plate
 	public void printResults() {
-		for (int j = 0; j < dimension; j++) {
-			System.out.print("----");
-		}
 		System.out.println();
 		for (int i = 0; i < dimension; i++) {
 			for (int j = 0; j < dimension; j++) {
-				System.out.printf("%.1f|", oldPlate[i][j]);
-			}
-			System.out.println();
-			for (int j = 0; j < dimension; j++) {
-				System.out.print("----");
+				System.out.printf("[%.1f]", oldPlate[i][j]);
 			}
 			System.out.println();
 		}
@@ -131,9 +124,18 @@ public class Tpdahp extends DiffusionSimulator {
 		return true;
 	}
 
-        @Override
         public StringBuffer exportResults()
         {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            StringBuffer ret = new StringBuffer();
+            ret.append("\n");
+            for (int i = 1; i < dimension - 1; i++)
+            {
+                for (int j = 1; j < dimension - 1; j++)
+                {
+                    ret.append(String.format("[%.2f]", oldPlate[i][j]));
+                }
+                ret.append("\n");
+            }
+            return ret;
         }
 }

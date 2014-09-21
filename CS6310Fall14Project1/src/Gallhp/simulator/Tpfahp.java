@@ -95,49 +95,15 @@ public class Tpfahp extends DiffusionSimulator {
     //prints out the plate
     public void printResults()
     {
-        for (int j = 1; j < dimension - 1; j++)
-        {
-            System.out.print("------");
-        }
         System.out.println();
         for (int i = 1; i < dimension - 1; i++)
         {
             for (int j = 1; j < dimension - 1; j++)
             {
-                System.out.printf("%.2f|", oldPlate[i][j]);
-            }
-            System.out.println();
-            for (int j = 1; j < dimension - 1; j++)
-            {
-                System.out.print("------");
+                System.out.printf("[%.2f]", oldPlate[i][j]);
             }
             System.out.println();
         }
-    }
-
-    //Returns the results in a string buffer
-    public StringBuffer exportPlate()
-    {
-        StringBuffer ret = new StringBuffer();
-        for (int j = 1; j < dimension - 1; j++)
-        {
-            ret.append("------");
-        }
-        ret.append("\n");
-        for (int i = 1; i < dimension - 1; i++)
-        {
-            for (int j = 1; j < dimension - 1; j++)
-            {
-                ret.append(String.format("%.2f|", oldPlate[i][j]));
-            }
-            ret.append("\n");
-            for (int j = 1; j < dimension - 1; j++)
-            {
-                ret.append("------");
-            }
-            ret.append("\n");
-        }
-        return ret;
     }
 
     //returns true if counter is over 3000 or the change in values was negligible last iteration
@@ -160,11 +126,20 @@ public class Tpfahp extends DiffusionSimulator {
         return true;
     }
 
-    @Override
-    public StringBuffer exportResults()
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        public StringBuffer exportResults()
+        {
+            StringBuffer ret = new StringBuffer();
+            ret.append("\n");
+            for (int i = 1; i < dimension - 1; i++)
+            {
+                for (int j = 1; j < dimension - 1; j++)
+                {
+                    ret.append(String.format("[%.2f]", oldPlate[i][j]));
+                }
+                ret.append("\n");
+            }
+            return ret;
+        }
 
 
 }
