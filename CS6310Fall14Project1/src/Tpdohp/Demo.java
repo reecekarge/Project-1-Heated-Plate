@@ -8,7 +8,7 @@ public class Demo
 
 	public static void main(String[] args)
 	{
-
+		String output = "";
 		int dim = 0;
 		int left = -1;
 		int right = -1;
@@ -19,7 +19,7 @@ public class Demo
 		Boolean done = false;
 		LatticePoint holderP = new LatticePoint();
 		Coords holderC = new Coords(0,0);
-		DecimalFormat td = new DecimalFormat("#.00");
+		DecimalFormat td = new DecimalFormat("##.00");
 		int iterations = 0;
 
 
@@ -78,7 +78,7 @@ public class Demo
 		while(!done)
 		{
 			iterations++;
-			String output = "";
+			output = "";
 			for(int y = 1; y <= dim; y++)
 			{
 				significantDifference = 0;
@@ -95,7 +95,7 @@ public class Demo
 
 					plate.put(holderC,holderP);
 					//output += (holderP.toString()+td.format(holderP.getTemp())+"  ");
-                                        output += ("["+td.format(holderP.getTemp())+"]");
+                    output += ("["+td.format(holderP.getTemp())+"]");
 
 
 					if (holderP.getX() == dim)
@@ -110,9 +110,11 @@ public class Demo
 				done = true;
 			}
 
-			System.out.println(output);
-			}
+			
 
+			}
+			System.out.println(output);
+			
 		 	long end = System.currentTimeMillis();
 			Runtime runtime = Runtime.getRuntime();
 	        long memory = runtime.totalMemory() - runtime.freeMemory();
@@ -123,6 +125,8 @@ public class Demo
 
 
 		}
+        
 	}
+	
 
 }
