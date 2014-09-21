@@ -81,6 +81,8 @@ public class Demo
 		plateNew.setPointNeighbors();
 		plateSwitcher.createGrid();
 		plateSwitcher.setPointNeighbors();
+		plateSwitcher2.createGrid();
+		plateSwitcher2.setPointNeighbors();
 		plateOld.createGrid();
 		plateOld.setPointNeighbors();
 		
