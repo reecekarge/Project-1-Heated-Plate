@@ -78,7 +78,7 @@ public class Demo
 		plateOld.createGrid();
 		plateOld.setPointNeighbors();
 		
-		System.out.println("hello world test21");
+		System.out.println("hello world test2");
 		do
 		{
 			iterations++;
@@ -111,12 +111,12 @@ public class Demo
 			if (significantDifference <= .1 || iterations > 9999)
 			{
 				done = true;
-				plateOld.equals(plateNew);
+				
 				System.out.println("swap");
 			}
 
 			
-			
+			plateOld = plateNew;
 		}
 		while(!done);
 			
