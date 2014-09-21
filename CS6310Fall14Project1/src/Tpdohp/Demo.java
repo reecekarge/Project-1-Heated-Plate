@@ -17,7 +17,8 @@ public class Demo
 
 		double significantDifference = 0;
 		Boolean done = false;
-		LatticePoint holderP = new LatticePoint();
+		LatticePoint holderBring = new LatticePoint();
+		LatticePoint holderPut = new LatticePoint();
 		Coords holderC = new Coords(0,0);
 		DecimalFormat td = new DecimalFormat("00.00");
 		int iterations = 0;
@@ -78,36 +79,52 @@ public class Demo
 		plateOld.createGrid();
 		plateOld.setPointNeighbors();
 		
-		System.out.println("hello world test21");
-		do
+		System.out.println("hello world test3");
+		while(!done)
 		{
+			significantDifference = 0;
 			iterations++;
 			output = "";
 			for(int y = 1; y <= dim; y++)
 			{
-				significantDifference = 0;
+				
 				for(int x = 1; x <= dim; x++)
 				{
+					double temperature1 = 0; 
+					double temperature2 = 0; 
+					
 					holderC = new Coords(x,y);
-					holderP = plateOld.getMap().get(holderC);
-
-
-					plateNew.put(holderC,holderP);
-					//output += (holderP.toString()+td.format(holderP.getTemp())+"  ");
-                    output += ("[ "+td.format(holderP.getTemp())+" ]");
-                    holderP.setTemp();
-                    if (holderP.getChange() > significantDifference)
+					
+					
+					holderBring = plateOld.getMap().get(holderC);
+					temperature1 = holderBring.getTemp();
+					holderBring.setTemp();
+					temperature2 = holderBring.getTemp();
+					
+					holderPut = plateNew.getMap().get(holderC);
+					holderPut.setTemp(temperature2);
+					
+					plateNew.put(holderC,holderPut);
+					
+                    output += ("[ "+td.format(holderPut.getTemp())+" ]");
+                    
+                    if (significantDifference - holderPut.getTemp() > significantDifference)
 					{
-						significantDifference = holderP.getChange();
+						significantDifference = holderPut.getTemp();
 					}
-					if (holderP.getX() == dim)
+					if (holderPut.getX() == dim)
 					{
 						output += "\n";
+					}
+					if (temperature2 - temperature1 > .1)
+					{
+						significantDifference = temperature2 - temperature1;
 					}
 
 				}
 			}
 			System.out.println(output);
+			
 			if (significantDifference <= .1 || iterations > 9999)
 			{
 				done = true;
@@ -119,7 +136,7 @@ public class Demo
 			plateOld = plateNew;
 			System.out.println("swap");
 		}
-		while(!done);
+		
 			
 			
 		 	long end = System.currentTimeMillis();

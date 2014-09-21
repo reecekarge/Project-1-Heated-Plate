@@ -7,8 +7,7 @@ public class LatticePoint //extends Point
 {
 	private int x;
 	private int y;
-	private double change = 0;
-	public double temp = 0; 
+	private double temp = 0; 
 	public LatticePoint leftPoint = null;
 	public LatticePoint rightPoint = null;
 	public LatticePoint topPoint = null;
@@ -34,14 +33,16 @@ public class LatticePoint //extends Point
 	
 	public void setTemp()
 	{
-		change = Math.abs((leftPoint.temp+rightPoint.temp+topPoint.temp+bottomPoint.temp)/4 - temp);
+		
 		temp=(leftPoint.temp+rightPoint.temp+topPoint.temp+bottomPoint.temp)/4;
 		
 							 
 	}
 	public double getTemp()
 	{
+		
 		return temp;
+		
 	}
 	public void setTemp(double t)
 	{
@@ -102,10 +103,6 @@ public class LatticePoint //extends Point
     { 
     	return y; 
     }
-	public double getChange()
-	{
-		return change;
-	}
 
 	
 }

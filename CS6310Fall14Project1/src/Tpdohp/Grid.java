@@ -138,7 +138,7 @@ public class Grid
 		    //to get key
 		    
 		    //and to get value
-		    all +=e.getValue().temp+" ";
+		    all +=e.getValue().getTemp()+" ";
 		}
 		return all;
 	}
