@@ -79,7 +79,7 @@ public class Demo
 		plateOld.createGrid();
 		plateOld.setPointNeighbors();
 		
-		System.out.println("hello world test3");
+		System.out.println("hello world test32");
 		while(!done)
 		{
 			significantDifference = 0;
