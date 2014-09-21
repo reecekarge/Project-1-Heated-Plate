@@ -11,7 +11,8 @@ Instructions:
 
 Compilation:
 
-cd ..../Project-1-Heated-Plate/CS6310Fall14Project1/src/
+(PATH_TO_PROJECT is the path to the location on the hard drive where the project was saved)
+cd PATH_TO_PROJECT/Project-1-Heated-Plate/CS6310Fall14Project1/src/
 
 javac */*.java
 
