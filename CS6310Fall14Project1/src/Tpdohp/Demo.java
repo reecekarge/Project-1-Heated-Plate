@@ -2,29 +2,21 @@ package Tpdohp;
 
 import java.text.DecimalFormat;
 
+import Tpfahp.DiffusionSimulator;
+
 
 public class Demo
 {
-
+	
 	public static void main(String[] args) throws InterruptedException
 	{
-		String output = "";
 		int dim = 0;
 		int left = -1;
 		int right = -1;
 		int top = -1;
 		int bottom = -1;
-
-		double significantDifference = 0;
-		Boolean done = false;
-		LatticePoint pointbring = new LatticePoint();
-		
-		Coords holderC = new Coords(0,0);
-		DecimalFormat td = new DecimalFormat("00.00");
-		int iterations = 0;
-
-
 		int i = 0, j;
+		
         String arg;
         char flag;
 
@@ -71,91 +63,19 @@ public class Demo
         } else
         {
         	long start = System.currentTimeMillis();
-
-		Grid plateOld = new Grid(dim, left, right, top, bottom);
-		Grid plateNew = new Grid(dim, left, right, top, bottom);
-		Grid plateSwitch = new Grid(dim, left, right, top, bottom);
 		
-		plateNew.createGrid();
-		plateNew.setPointNeighbors();
-		
-		plateOld.createGrid();
-		plateOld.setPointNeighbors();
-		
-		plateSwitch.createGrid();
-		plateSwitch.setPointNeighbors();
-		
-		do
-		{
-			significantDifference = 0;
-			iterations++;
-			output = "";
-			for(int y = 1; y <= dim; y++)
-			{
-				
-				for(int x = 1; x <= dim; x++)
-				{
-					double temperature1 = 0; 
-					double temperature2 = 0; 
-					
-					holderC = new Coords(x,y);
-					
-					
-					pointbring = plateOld.getMap().get(holderC);	
-										
-					temperature1 = pointbring.getTemp();
-			
-					pointbring.setTemp();
-			
-					temperature2 = pointbring.getTemp();
-					
-                    
-					plateNew.getMap().put(holderC, pointbring);
-					
-					output += ("[ "+td.format(pointbring.getTemp())+" ]");
-                    
-					//pointbring.setTemp(temperature1);
-                    
-					if (pointbring.getX() == dim)
-					{
-						output += "\n";
-					}
-					if (temperature2 - temperature1 > .1)
-					{
-						significantDifference = temperature2 - temperature1;
-					}
+        	 DiffusionSimulator simulator = new DiffusionSimulator(dim, top, bottom, left, right);
+             simulator.simulate();
 
-				}
-			}
+             long end = System.currentTimeMillis();
+             simulator.printResults(); 
 			
-			
-			if (significantDifference <= .1 || iterations > 9999)
-			{
-			 	done = true;
-				
-				
-			}
-
-			//swap
-			plateSwitch = plateNew;  
-			plateNew = plateOld;    
-			plateOld = plateSwitch;  
-
-			
-			
-			
-		}
-		while(!done);
-		System.out.println(output);
-			
-			
-		 	long end = System.currentTimeMillis();
 			Runtime runtime = Runtime.getRuntime();
 	        long memory = runtime.totalMemory() - runtime.freeMemory();
 	        System.out.println("\n\nPerformance Summary");
 	        System.out.println(String.format(" - Time Taken: %dms", end - start));
 	        System.out.println(String.format(" - Memory Used: %d bytes", memory));
-	        System.out.println(String.format(" - Number of iterations: %d", iterations));
+	        System.out.println(String.format(" - Number of iterations: %d", simulator.getNumberOfIterations()));
 
 
 		}
