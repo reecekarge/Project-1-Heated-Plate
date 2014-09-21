@@ -71,10 +71,14 @@ public class Demo
         {
         	long start = System.currentTimeMillis();
 
-		Grid plate = new Grid(dim, left, right, top, bottom);
-		plate.createGrid();
-		plate.setPointNeighbors();
-
+		Grid plateOld = new Grid(dim, left, right, top, bottom);
+		Grid plateNew = new Grid(dim, left, right, top, bottom);
+		plateNew.createGrid();
+		plateNew.setPointNeighbors();
+		plateOld.createGrid();
+		plateOld.setPointNeighbors();
+		
+		
 		while(!done)
 		{
 			iterations++;
@@ -85,7 +89,7 @@ public class Demo
 				for(int x = 1; x <= dim; x++)
 				{
 					holderC = new Coords(x,y);
-					holderP = plate.getMap().get(holderC);
+					holderP = plateOld.getMap().get(holderC);
 
 					holderP.setTemp();
 					if (holderP.getChange() > significantDifference)
@@ -93,7 +97,7 @@ public class Demo
 						significantDifference = holderP.getChange();
 					}
 
-					plate.put(holderC,holderP);
+					plateNew.put(holderC,holderP);
 					//output += (holderP.toString()+td.format(holderP.getTemp())+"  ");
                     output += ("[ "+td.format(holderP.getTemp())+" ]");
 
@@ -108,6 +112,7 @@ public class Demo
 			if (significantDifference <= .1 || iterations > 9999)
 			{
 				done = true;
+				plateOld = plateNew;
 			}
 
 			
