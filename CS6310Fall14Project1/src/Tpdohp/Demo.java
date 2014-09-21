@@ -17,8 +17,8 @@ public class Demo
 
 		double significantDifference = 0;
 		Boolean done = false;
+		LatticePoint pointBring = new LatticePoint();
 		
-		LatticePoint pointSwitch = new LatticePoint();
 		Coords holderC = new Coords(0,0);
 		DecimalFormat td = new DecimalFormat("00.00");
 		int iterations = 0;
@@ -74,7 +74,6 @@ public class Demo
 
 		Grid plateOld = new Grid(dim, left, right, top, bottom);
 		Grid plateNew = new Grid(dim, left, right, top, bottom);
-		Grid plateSwitcher = new Grid(dim, left, right, top, bottom);
 		
 		plateNew.createGrid();
 		plateNew.setPointNeighbors();
@@ -82,10 +81,6 @@ public class Demo
 		plateOld.createGrid();
 		plateOld.setPointNeighbors();
 		
-		plateSwitcher.createGrid();
-		plateSwitcher.setPointNeighbors();
-		
-		System.out.println("3eeee664ee3");
 		while(!done)
 		{
 			significantDifference = 0;
@@ -99,20 +94,11 @@ public class Demo
 					double temperature1 = 0; 
 					double temperature2 = 0; 
 					
-					LatticePoint pointBring = new LatticePoint();
-					//LatticePoint pointPut = new LatticePoint();
-					
 					holderC = new Coords(x,y);
-					
-					//delete switcher
-					pointBring = plateOld.getMap().get(holderC);
-					//pointPut = plateSwitcher.getMap().get(holderC);
-					//pointSwitch = plateSwitcher.getMap().get(holderC);
-					pointBring.
-					
-					
+
+					pointBring = plateOld.getMap().get(holderC);				
 					temperature1 = pointBring.getTemp();
-					
+			
 					pointBring.setTemp();
 			
 					temperature2 = pointBring.getTemp();
@@ -135,7 +121,7 @@ public class Demo
 
 				}
 			}
-			System.out.println(output);
+			
 			
 			if (significantDifference <= .1 || iterations > 9999)
 			{
@@ -144,18 +130,12 @@ public class Demo
 				
 			}
 
-			 //System.out.println(plateOld);
-			System.out.println("new plate1"+plateNew.toString());
-			System.out.println("old plate1"+plateOld.toString());
+		
 			plateNew.getMap().putAll(plateOld.getMap());
 
-			System.out.println("new plate2"+plateNew.toString());
-			System.out.println("old plate2"+plateOld.toString());
-			// System.out.println(plateOld);
-			// plateSwitcher2 = plateNew;
-			System.out.println("swap");
+			
 		}
-		
+		System.out.println(output);
 			
 			
 		 	long end = System.currentTimeMillis();

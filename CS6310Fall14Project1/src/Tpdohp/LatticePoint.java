@@ -104,6 +104,10 @@ public class LatticePoint //extends Point
     { 
     	return y; 
     }
+	public LatticePoint(LatticePoint p)
+	{
+		
+	}
 
 	
 }
