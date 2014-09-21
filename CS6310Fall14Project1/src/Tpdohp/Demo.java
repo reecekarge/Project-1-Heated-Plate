@@ -106,8 +106,9 @@ public class Demo
 
 					
 					temperature1 = pointBring.getTemp();
+					System.out.println(pointBring.getTemp()+" first Temp");
 					pointBring.setTemp();
-
+					System.out.println(pointBring.getTemp()+" 2nd   Temp");
 					temperature2 = pointBring.getTemp();
 					
 					
