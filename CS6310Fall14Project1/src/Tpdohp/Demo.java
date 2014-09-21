@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 public class Demo
 {
 
-	public static void main(String[] args)
+	public static void main(String[] args) throws InterruptedException
 	{
 		String output = "";
 		int dim = 0;
@@ -74,6 +74,7 @@ public class Demo
 
 		Grid plateOld = new Grid(dim, left, right, top, bottom);
 		Grid plateNew = new Grid(dim, left, right, top, bottom);
+		Grid plateSwitch = new Grid(dim, left, right, top, bottom);
 		
 		plateNew.createGrid();
 		plateNew.setPointNeighbors();
@@ -81,7 +82,10 @@ public class Demo
 		plateOld.createGrid();
 		plateOld.setPointNeighbors();
 		
-		while(!done)
+		plateSwitch.createGrid();
+		plateSwitch.setPointNeighbors();
+		
+		do
 		{
 			significantDifference = 0;
 			iterations++;
@@ -95,20 +99,23 @@ public class Demo
 					double temperature2 = 0; 
 					
 					holderC = new Coords(x,y);
-
-					pointBring = plateOld.getMap().get(holderC);				
+					
+					
+					pointBring = plateOld.getMap().get(holderC);	
+					
 					temperature1 = pointBring.getTemp();
 			
 					pointBring.setTemp();
 			
 					temperature2 = pointBring.getTemp();
-					
+					//System.out.println("Temp 1 = "+temperature1+" Temp 2 ="+temperature2);
 				
-					
+					//System.out.println("X="+pointBring.getX()+" Y="+pointBring.getY()+" temp="+pointBring.getTemp());
 					plateNew.getMap().put(holderC, pointBring);
+					
 					output += ("[ "+td.format(pointBring.getTemp())+" ]");
                     
-					//pointBring.setTemp(temperature1);
+					pointBring.setTemp(temperature1);
                     
 					if (pointBring.getX() == dim)
 					{
@@ -121,21 +128,26 @@ public class Demo
 
 				}
 			}
-			
+			System.out.println(output);
 			
 			if (significantDifference <= .1 || iterations > 9999)
 			{
-				done = true;
+			 	done = true;
 				
 				
 			}
-
-		
-			plateNew.getMap().putAll(plateOld.getMap());
+	Thread.sleep(400);
+			System.out.println("swap");
+			plateSwitch = plateNew;  
+			plateNew = plateOld;    
+			plateOld = plateSwitch;  
 
 			
+			
+			
 		}
-		System.out.println(output);
+		while(!done);
+		
 			
 			
 		 	long end = System.currentTimeMillis();
