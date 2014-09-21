@@ -107,7 +107,7 @@ public class Demo
 					//pointPut = plateSwitcher2.getMap().get(holderC);
 					//pointSwitch = plateSwitcher.getMap().get(holderC);
 					
-					
+					System.out.println(pointBring.getTemp()+" -first");
 					
 					temperature1 = pointBring.getTemp();
 					pointBring.setTemp();
