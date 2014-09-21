@@ -3,7 +3,7 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.function.BiFunction;
+
 
 public class Grid 
 {
@@ -143,10 +143,10 @@ public class Grid
 		}
 		return all;
 	}
-	@SuppressWarnings("unchecked")
+	
 	public void swap(Grid plateNew) 
 	{
-	  this.map.replaceAll((BiFunction<? super Coords, ? super LatticePoint, ? extends LatticePoint>) plateNew.map);
+	  this.map.putAll(plateNew.map);
 		
 	}
 	 
