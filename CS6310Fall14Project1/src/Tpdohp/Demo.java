@@ -78,7 +78,7 @@ public class Demo
 		plateOld.createGrid();
 		plateOld.setPointNeighbors();
 		
-		
+		System.out.println("hello world test");
 		while(!done)
 		{
 			iterations++;
