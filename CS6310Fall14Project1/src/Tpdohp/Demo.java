@@ -112,7 +112,7 @@ public class Demo
 			if (significantDifference <= .1 || iterations > 9999)
 			{
 				done = true;
-				plateOld = plateNew;
+				plateOld.equals(plateNew);
 			}
 
 			
