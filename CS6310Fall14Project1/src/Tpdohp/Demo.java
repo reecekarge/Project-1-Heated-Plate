@@ -117,7 +117,7 @@ public class Demo
 					
 					plateNew.getMap().put(holderC, pointBring);
 
-					pointBring = plateOld.getMap().get(holderC);
+					pointBring = plateSwitcher2.getMap().get(holderC);
 					System.out.println(pointBring.getTemp()+" second");
 					//PointPut.setTemp(temperature2);
 					
