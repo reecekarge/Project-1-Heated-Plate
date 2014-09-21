@@ -9,6 +9,9 @@ Participants:
 
 Instructions:
 
+Compilation:
+
+
 Syntax: java <packageName>.Demo -d # -l # -r # -t # -b #
     Replace <packageName> with any one of Tpdohp, Tpdahp, Tpfahp or Twfahp
 
