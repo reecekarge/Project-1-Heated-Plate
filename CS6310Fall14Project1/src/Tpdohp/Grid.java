@@ -144,10 +144,6 @@ public class Grid
 		return all;
 	}
 	
-	public void swap(Grid plateNew) 
-	{
-	  
-		
-	}
+	
 	 
 }

@@ -17,8 +17,7 @@ public class Demo
 
 		double significantDifference = 0;
 		Boolean done = false;
-		LatticePoint pointBring = new LatticePoint();
-		LatticePoint pointPut = new LatticePoint();
+		
 		LatticePoint pointSwitch = new LatticePoint();
 		Coords holderC = new Coords(0,0);
 		DecimalFormat td = new DecimalFormat("00.00");
@@ -86,7 +85,7 @@ public class Demo
 		plateSwitcher.createGrid();
 		plateSwitcher.setPointNeighbors();
 		
-		System.out.println("3eeeee44ee3");
+		System.out.println("3eeee664ee3");
 		while(!done)
 		{
 			significantDifference = 0;
@@ -100,19 +99,22 @@ public class Demo
 					double temperature1 = 0; 
 					double temperature2 = 0; 
 					
+					LatticePoint pointBring = new LatticePoint();
+					//LatticePoint pointPut = new LatticePoint();
+					
 					holderC = new Coords(x,y);
 					
 					//delete switcher
 					pointBring = plateOld.getMap().get(holderC);
-					pointPut = plateSwitcher.getMap().get(holderC);
+					//pointPut = plateSwitcher.getMap().get(holderC);
 					//pointSwitch = plateSwitcher.getMap().get(holderC);
-					
+					pointBring.
 					
 					
 					temperature1 = pointBring.getTemp();
-					System.out.println(pointBring.getTemp()+" first Temp");
+					
 					pointBring.setTemp();
-					System.out.println(pointBring.getTemp()+" 2nd   Temp");
+			
 					temperature2 = pointBring.getTemp();
 					
 				

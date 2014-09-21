@@ -3,6 +3,7 @@ package Tpdohp;
 
 
 
+
 public class LatticePoint //extends Point
 {
 	private int x;
