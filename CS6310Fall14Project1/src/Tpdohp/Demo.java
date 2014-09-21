@@ -109,6 +109,7 @@ public class Demo
 
 				}
 			}
+			System.out.println(output);
 			if (significantDifference <= .1 || iterations > 9999)
 			{
 				done = true;
@@ -116,7 +117,7 @@ public class Demo
 			}
 
 			
-			System.out.println(output);
+			
 			}
 			
 			
