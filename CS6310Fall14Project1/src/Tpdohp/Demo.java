@@ -19,7 +19,7 @@ public class Demo
 		Boolean done = false;
 		LatticePoint holderP = new LatticePoint();
 		Coords holderC = new Coords(0,0);
-		DecimalFormat td = new DecimalFormat("##.00");
+		DecimalFormat td = new DecimalFormat("00.00");
 		int iterations = 0;
 
 
