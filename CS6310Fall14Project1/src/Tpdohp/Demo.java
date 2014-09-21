@@ -86,7 +86,7 @@ public class Demo
 		plateOld.createGrid();
 		plateOld.setPointNeighbors();
 		
-		System.out.println("3eeeee3");
+		System.out.println("3eeeee44ee3");
 		while(!done)
 		{
 			significantDifference = 0;
@@ -121,7 +121,7 @@ public class Demo
 					//System.out.println(pointBring.getTemp()+" second");
 					//PointPut.setTemp(temperature2);
 					
-                    output += ("[ "+td.format(pointPut.getTemp())+" ]");
+                    output += ("[ "+td.format(pointBring.getTemp())+" ]");
                     pointBring = pointPut;
 					if (pointBring.getX() == dim)
 					{
