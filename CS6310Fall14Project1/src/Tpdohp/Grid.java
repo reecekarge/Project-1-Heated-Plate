@@ -146,7 +146,7 @@ public class Grid
 	
 	public void swap(Grid plateNew) 
 	{
-	  this.map.putAll(plateNew.map);
+	  
 		
 	}
 	 
