@@ -138,7 +138,7 @@ public class Demo
 			}
 
 			
-			plateOld = plateNew;
+			//plateOld = plateNew;
 			System.out.println("swap");
 		}
 		
