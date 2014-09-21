@@ -105,18 +105,14 @@ public class Demo
 					temperature1 = holderBring.getTemp();
 					holderBring.setTemp();
 					temperature2 = holderBring.getTemp();
+					
+					plateNew.getMap().put(holderC, holderBring);
 					plateOld.getMap().put(holderC, holderPut);
 					
-					holderPut.setTemp(temperature2);
-					
-					plateNew.put(holderC,holderPut);
+					//holderPut.setTemp(temperature2);
 					
                     output += ("[ "+td.format(holderPut.getTemp())+" ]");
-                    
-                    if (significantDifference - holderPut.getTemp() > significantDifference)
-					{
-						significantDifference = holderPut.getTemp();
-					}
+
 					if (holderPut.getX() == dim)
 					{
 						output += "\n";
@@ -138,7 +134,7 @@ public class Demo
 			}
 
 			
-			//plateOld = plateNew;
+			plateOld = plateNew;
 			System.out.println("swap");
 		}
 		
