@@ -17,7 +17,7 @@ public class Demo
 
 		double significantDifference = 0;
 		Boolean done = false;
-		LatticePoint pointBring = new LatticePoint();
+		LatticePoint pointbring = new LatticePoint();
 		
 		Coords holderC = new Coords(0,0);
 		DecimalFormat td = new DecimalFormat("00.00");
@@ -101,23 +101,22 @@ public class Demo
 					holderC = new Coords(x,y);
 					
 					
-					pointBring = plateOld.getMap().get(holderC);	
-					
-					temperature1 = pointBring.getTemp();
+					pointbring = plateOld.getMap().get(holderC);	
+										
+					temperature1 = pointbring.getTemp();
 			
-					pointBring.setTemp();
+					pointbring.setTemp();
 			
-					temperature2 = pointBring.getTemp();
-					//System.out.println("Temp 1 = "+temperature1+" Temp 2 ="+temperature2);
-				
-					//System.out.println("X="+pointBring.getX()+" Y="+pointBring.getY()+" temp="+pointBring.getTemp());
-					plateNew.getMap().put(holderC, pointBring);
+					temperature2 = pointbring.getTemp();
 					
-					output += ("[ "+td.format(pointBring.getTemp())+" ]");
                     
-					pointBring.setTemp(temperature1);
+					plateNew.getMap().put(holderC, pointbring);
+					
+					output += ("[ "+td.format(pointbring.getTemp())+" ]");
                     
-					if (pointBring.getX() == dim)
+					//pointbring.setTemp(temperature1);
+                    
+					if (pointbring.getX() == dim)
 					{
 						output += "\n";
 					}
@@ -128,7 +127,7 @@ public class Demo
 
 				}
 			}
-			System.out.println(output);
+			
 			
 			if (significantDifference <= .1 || iterations > 9999)
 			{
@@ -136,8 +135,8 @@ public class Demo
 				
 				
 			}
-	Thread.sleep(400);
-			System.out.println("swap");
+
+			//swap
 			plateSwitch = plateNew;  
 			plateNew = plateOld;    
 			plateOld = plateSwitch;  
@@ -147,7 +146,7 @@ public class Demo
 			
 		}
 		while(!done);
-		
+		System.out.println(output);
 			
 			
 		 	long end = System.currentTimeMillis();
