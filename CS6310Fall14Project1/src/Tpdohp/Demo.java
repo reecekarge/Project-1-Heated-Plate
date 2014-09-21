@@ -75,14 +75,10 @@ public class Demo
 
 		Grid plateOld = new Grid(dim, left, right, top, bottom);
 		Grid plateNew = new Grid(dim, left, right, top, bottom);
-		Grid plateSwitcher = new Grid(dim, left, right, top, bottom);
-		Grid plateSwitcher2 = new Grid(dim, left, right, top, bottom);
+		
 		plateNew.createGrid();
 		plateNew.setPointNeighbors();
-		plateSwitcher.createGrid();
-		plateSwitcher.setPointNeighbors();
-		plateSwitcher2.createGrid();
-		plateSwitcher2.setPointNeighbors();
+		
 		plateOld.createGrid();
 		plateOld.setPointNeighbors();
 		
@@ -141,7 +137,7 @@ public class Demo
 			}
 
 			
-			 plateOld = plateNew;
+			 plateOld.swap(plateNew);
 			// plateSwitcher2 = plateNew;
 			System.out.println("swap");
 		}
