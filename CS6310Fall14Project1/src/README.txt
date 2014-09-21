@@ -11,6 +11,10 @@ Instructions:
 
 Compilation:
 
+cd ..../Project-1-Heated-Plate/CS6310Fall14Project1/src/
+
+javac */*.java
+
 
 Syntax: java <packageName>.Demo -d # -l # -r # -t # -b #
     Replace <packageName> with any one of Tpdohp, Tpdahp, Tpfahp or Twfahp
