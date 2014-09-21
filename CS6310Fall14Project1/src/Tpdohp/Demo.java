@@ -18,7 +18,8 @@ public class Demo
 		double significantDifference = 0;
 		Boolean done = false;
 		LatticePoint pointBring = new LatticePoint();
-		LatticePoint PointPut = new LatticePoint();
+		LatticePoint pointPut = new LatticePoint();
+		LatticePoint pointSwitch = new LatticePoint();
 		Coords holderC = new Coords(0,0);
 		DecimalFormat td = new DecimalFormat("00.00");
 		int iterations = 0;
@@ -100,18 +101,21 @@ public class Demo
 					
 					//delete switcher
 					pointBring = plateOld.getMap().get(holderC);
-					PointPut = plateSwitcher.getMap().get(holderC);
+					pointPut = plateOld.getMap().get(holderC);
+					pointSwitch = plateOld.getMap().get(holderC);
+					
 					
 					temperature1 = pointBring.getTemp();
 					pointBring.setTemp();
 					temperature2 = pointBring.getTemp();
+					pointPut.setTemp(temperature2);
 					
-					plateNew.getMap().put(holderC, pointBring);
-					plateOld.getMap().put(holderC, PointPut);
+					plateNew.getMap().put(holderC, pointPut);
+					plateOld.getMap().put(holderC, pointSwitch);
 					
 					//PointPut.setTemp(temperature2);
 					
-                    output += ("[ "+td.format(pointBring.getTemp())+" ]");
+                    output += ("[ "+td.format(pointPut.getTemp())+" ]");
 
 					if (pointBring.getX() == dim)
 					{
