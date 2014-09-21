@@ -76,6 +76,7 @@ public class Demo
 		Grid plateOld = new Grid(dim, left, right, top, bottom);
 		Grid plateNew = new Grid(dim, left, right, top, bottom);
 		Grid plateSwitcher = new Grid(dim, left, right, top, bottom);
+		Grid plateSwitcher2 = new Grid(dim, left, right, top, bottom);
 		plateNew.createGrid();
 		plateNew.setPointNeighbors();
 		plateSwitcher.createGrid();
@@ -83,7 +84,7 @@ public class Demo
 		plateOld.createGrid();
 		plateOld.setPointNeighbors();
 		
-		System.out.println("hello world testx23");
+		System.out.println("3333333");
 		while(!done)
 		{
 			significantDifference = 0;
@@ -101,8 +102,9 @@ public class Demo
 					
 					//delete switcher
 					pointBring = plateOld.getMap().get(holderC);
-					pointPut = plateOld.getMap().get(holderC);
-					pointSwitch = plateOld.getMap().get(holderC);
+					pointPut = plateSwitcher2.getMap().get(holderC);
+					pointSwitch = plateSwitcher.getMap().get(holderC);
+					
 					
 					
 					temperature1 = pointBring.getTemp();
