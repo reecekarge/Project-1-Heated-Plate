@@ -137,7 +137,12 @@ public class Demo
 			}
 
 			 //System.out.println(plateOld);
+			System.out.println("new plate1"+plateNew.toString());
+			System.out.println("old plate1"+plateOld.toString());
 			plateNew.getMap().putAll(plateOld.getMap());
+
+			System.out.println("new plate2"+plateNew.toString());
+			System.out.println("old plate2"+plateOld.toString());
 			// System.out.println(plateOld);
 			// plateSwitcher2 = plateNew;
 			System.out.println("swap");
