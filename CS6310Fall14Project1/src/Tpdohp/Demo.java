@@ -78,7 +78,7 @@ public class Demo
 		plateOld.createGrid();
 		plateOld.setPointNeighbors();
 		
-		System.out.println("hello world test");
+		System.out.println("hello world test2");
 		while(!done)
 		{
 			iterations++;
@@ -91,7 +91,7 @@ public class Demo
 					holderC = new Coords(x,y);
 					holderP = plateOld.getMap().get(holderC);
 
-					holderP.setTemp();
+					
 					if (holderP.getChange() > significantDifference)
 					{
 						significantDifference = holderP.getChange();
@@ -100,7 +100,7 @@ public class Demo
 					plateNew.put(holderC,holderP);
 					//output += (holderP.toString()+td.format(holderP.getTemp())+"  ");
                     output += ("[ "+td.format(holderP.getTemp())+" ]");
-
+                    holderP.setTemp();
 
 					if (holderP.getX() == dim)
 					{
