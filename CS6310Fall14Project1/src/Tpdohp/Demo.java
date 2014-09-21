@@ -79,7 +79,7 @@ public class Demo
 		plateOld.createGrid();
 		plateOld.setPointNeighbors();
 		
-		System.out.println("hello world test32");
+		System.out.println("hello world testx2");
 		while(!done)
 		{
 			significantDifference = 0;
@@ -101,7 +101,7 @@ public class Demo
 					holderBring.setTemp();
 					temperature2 = holderBring.getTemp();
 					
-					holderPut = plateNew.getMap().get(holderC);
+					holderPut = plateOld.getMap().get(holderC);
 					holderPut.setTemp(temperature2);
 					
 					plateNew.put(holderC,holderPut);
