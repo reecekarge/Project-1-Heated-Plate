@@ -79,7 +79,7 @@ public class Demo
 		plateOld.setPointNeighbors();
 		
 		System.out.println("hello world test2");
-		while(!done)
+		do
 		{
 			iterations++;
 			output = "";
@@ -119,6 +119,7 @@ public class Demo
 			
 			
 			}
+		while(!done);
 			
 			
 		 	long end = System.currentTimeMillis();
