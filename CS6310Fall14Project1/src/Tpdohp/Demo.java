@@ -78,7 +78,7 @@ public class Demo
 		plateOld.createGrid();
 		plateOld.setPointNeighbors();
 		
-		System.out.println("hello world test2");
+		System.out.println("hello world test21");
 		do
 		{
 			iterations++;
@@ -112,11 +112,12 @@ public class Demo
 			{
 				done = true;
 				
-				System.out.println("swap");
+				
 			}
 
 			
 			plateOld = plateNew;
+			System.out.println("swap");
 		}
 		while(!done);
 			
