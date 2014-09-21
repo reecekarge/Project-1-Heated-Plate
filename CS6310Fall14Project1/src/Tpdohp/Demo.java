@@ -95,7 +95,7 @@ public class Demo
 
 					plate.put(holderC,holderP);
 					//output += (holderP.toString()+td.format(holderP.getTemp())+"  ");
-                    output += (" [ "+td.format(holderP.getTemp())+" ] ");
+                    output += ("[ "+td.format(holderP.getTemp())+" ]");
 
 
 					if (holderP.getX() == dim)
