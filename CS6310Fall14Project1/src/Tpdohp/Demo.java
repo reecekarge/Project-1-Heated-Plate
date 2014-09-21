@@ -111,9 +111,9 @@ public class Demo
 			}
 
 			
-
-			}
 			System.out.println(output);
+			}
+			
 			
 		 	long end = System.currentTimeMillis();
 			Runtime runtime = Runtime.getRuntime();
