@@ -23,7 +23,6 @@ public class DiffusionDimulator {
 
 	public DiffusionDimulator(int dim, int top, int bottom, int left, int right) {
 		
-
 		 plateOld = new Grid(dim, left, right, top, bottom);
 		 plateNew = new Grid(dim, left, right, top, bottom);
 		 plateSwitch = new Grid(dim, left, right, top, bottom);
