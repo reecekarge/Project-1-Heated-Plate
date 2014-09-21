@@ -104,25 +104,25 @@ public class Demo
 					
 					//delete switcher
 					pointBring = plateOld.getMap().get(holderC);
-					//pointPut = plateSwitcher2.getMap().get(holderC);
+					pointPut = plateSwitcher2.getMap().get(holderC);
 					//pointSwitch = plateSwitcher.getMap().get(holderC);
 					
-					System.out.println(pointBring.getTemp()+" -first");
+					//System.out.println(pointBring.getTemp()+" -first");
 					
 					temperature1 = pointBring.getTemp();
 					pointBring.setTemp();
-					System.out.println(pointBring.getTemp()+" first");
+					//System.out.println(pointBring.getTemp()+" first");
 					temperature2 = pointBring.getTemp();
 					//pointPut.setTemp(temperature2);
 					
 					plateNew.getMap().put(holderC, pointBring);
 
-					pointBring = plateSwitcher2.getMap().get(holderC);
-					System.out.println(pointBring.getTemp()+" second");
+					
+					//System.out.println(pointBring.getTemp()+" second");
 					//PointPut.setTemp(temperature2);
 					
                     output += ("[ "+td.format(pointPut.getTemp())+" ]");
-
+                    pointBring = pointPut;
 					if (pointBring.getX() == dim)
 					{
 						output += "\n";
@@ -144,8 +144,8 @@ public class Demo
 			}
 
 			
-			//plateOld = plateNew;
-			//plateSwitcher = plateNew;
+			 plateOld = plateNew;
+			 plateSwitcher2 = plateNew;
 			System.out.println("swap");
 		}
 		
