@@ -15,7 +15,7 @@ public class Demo
         char flag;
         boolean vflag = false;
         String outputfile = "";
-        int d = 0, t = 0, b = 0, l = 0, r = 0;
+        int d = 0, t = -1, b = -1, l = -1, r = -1;
 
         while (i < args.length)
         {
@@ -50,7 +50,7 @@ public class Demo
                 }
             }
         }
-        if (d == 0 || t == 0 || l == 0 || r == 0)
+        if (d < 0 || t < 0 || l < 0 || r < 0)
         {
             System.out.println("Invalid number of arguements.");
             System.out.println("Proper usage: java Tpdahp.Demo -d # -l # -r # -t # -b #");
@@ -72,20 +72,5 @@ public class Demo
             System.out.println(String.format(" - Number of iterations: %d", simulator.getNumberOfIterations()));
         }
 
-//		if(args.length==5){
-//			DiffusionSimulator simulator = new DiffusionSimulator(
-//                                        Integer.valueOf(args[0]),
-//					Integer.valueOf(args[3]),
-//					Integer.valueOf(args[4]),
-//					Integer.valueOf(args[1]),
-//					Integer.valueOf(args[2])
-//                        );
-//			simulator.simulate();
-//			simulator.printResults();
-//		}else{
-//			//Print out help
-//			System.out.println("Invalid number of arguements.");
-//			System.out.println("Proper usage: java Tpdahp.Demo -d # -l # -r # -t # -b #");
-//		}
     }
 }

@@ -50,7 +50,7 @@ public class Demo
                 }
             }
         }
-        if (d == 0 || t == -1 || l == -1 || r == -1)
+        if (d == 0 || t < 0 || l < 0 || r < 0)
         {
             System.out.println("Invalid number of arguements.");
             System.out.println("Proper usage: java Tpdahp.Demo -d # -l # -r # -t # -b #");
