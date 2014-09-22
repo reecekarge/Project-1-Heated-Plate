@@ -2,7 +2,7 @@ package Tpdohp;
 
 import java.text.DecimalFormat;
 
-public class DiffusionDimulator {
+public class DiffusionSimulator {
 	private double significantDifference = 0;
 	private int iterations = 0;
 	String output = "";
@@ -21,13 +21,13 @@ public class DiffusionDimulator {
 	Coords holderC = new Coords(0,0);
 	DecimalFormat td = new DecimalFormat("00.00");
 
-	public DiffusionDimulator(int dim, int top, int bottom, int left, int right) {
-		
+	public DiffusionSimulator(int dim, int top, int bottom, int left, int right) {
+		 this.dim = dim;
 		 plateOld = new Grid(dim, left, right, top, bottom);
 		 plateNew = new Grid(dim, left, right, top, bottom);
 		 plateSwitch = new Grid(dim, left, right, top, bottom);
 		
-		
+		 initialize();
 	}
 	
 	public void simulate() {
@@ -41,22 +41,23 @@ public class DiffusionDimulator {
 				
 				for(int x = 1; x <= dim; x++)
 				{
+				
 					double temperature1 = 0; 
 					double temperature2 = 0; 
 					
 					holderC = new Coords(x,y);
 					
 					
-					pointbring = plateOld.getMap().get(holderC);	
-										
+					pointbring = plateOld.getMap().get(holderC);
+					LatticePoint pointbringNew = plateNew.getMap().get(holderC);	
+					
 					temperature1 = pointbring.getTemp();
 			
-					pointbring.setTemp();
-			
-					temperature2 = pointbring.getTemp();
-					
+					temperature2 = pointbring.getAverageTemp();
+
+					pointbringNew.setTemp(temperature2);	
                     
-					plateNew.getMap().put(holderC, pointbring);
+					plateNew.getMap().put(holderC, pointbringNew);
 					
 					output += ("[ "+td.format(pointbring.getTemp())+" ]");
                     
@@ -96,8 +97,7 @@ public class DiffusionDimulator {
 	}
 
 
-	protected void initialize(double[][] plate, int top, int bot, int left,
-			int right) {
+	protected void initialize() {
 		plateNew.createGrid();
 		plateNew.setPointNeighbors();
 		

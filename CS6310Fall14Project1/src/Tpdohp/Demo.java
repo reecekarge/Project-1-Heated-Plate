@@ -2,7 +2,6 @@ package Tpdohp;
 
 import java.text.DecimalFormat;
 
-import Tpfahp.DiffusionSimulator;
 
 
 public class Demo

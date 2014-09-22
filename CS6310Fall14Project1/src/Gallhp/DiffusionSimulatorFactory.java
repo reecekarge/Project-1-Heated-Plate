@@ -20,7 +20,7 @@ public class DiffusionSimulatorFactory
             return new Tpdahp(Integer.valueOf(gridSize),Integer.valueOf(topTemp),Integer.valueOf(botTemp),Integer.valueOf(leftTemp),Integer.valueOf(rightTemp));
         } else if ("Tpdohp".equalsIgnoreCase(type))
         {
-            //return new Tpdohp(Integer.valueOf(gridSize),Integer.valueOf(topTemp),Integer.valueOf(botTemp),Integer.valueOf(leftTemp),Integer.valueOf(rightTemp));
+            return new Tpdohp(Integer.valueOf(gridSize),Integer.valueOf(topTemp),Integer.valueOf(botTemp),Integer.valueOf(leftTemp),Integer.valueOf(rightTemp));
         } else if ("Tpfahp".equalsIgnoreCase(type))
         {
             return new Tpfahp(Integer.valueOf(gridSize),Integer.valueOf(topTemp),Integer.valueOf(botTemp),Integer.valueOf(leftTemp),Integer.valueOf(rightTemp));
