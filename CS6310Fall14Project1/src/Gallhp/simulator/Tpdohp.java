@@ -81,7 +81,7 @@ public class Tpdohp extends DiffusionSimulator {
 			}
 			
 			
-			if (significantDifference <= .1 || iterations > 9999)
+			if (significantDifference <= .001 || iterations > 9999)
 			{
 			 	done = true;
 				

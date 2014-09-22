@@ -117,7 +117,7 @@ public class Tpfahp extends DiffusionSimulator {
         {
             for (int j = 0; j < dimension; j++)
             {
-                if (oldPlate[i][j] < newPlate[i][j] - .01 || oldPlate[i][j] > newPlate[i][j] + .01)
+                if (oldPlate[i][j] < newPlate[i][j] - .001 || oldPlate[i][j] > newPlate[i][j] + .001)
                 {
                     return false;
                 }

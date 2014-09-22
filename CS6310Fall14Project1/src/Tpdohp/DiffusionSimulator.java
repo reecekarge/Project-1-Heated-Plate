@@ -67,7 +67,7 @@ public class DiffusionSimulator {
 					{
 						output += "\n";
 					}
-					if (temperature2 - temperature1 > .1)
+					if (temperature2 - temperature1 > .001)
 					{
 						significantDifference = temperature2 - temperature1;
 					}
